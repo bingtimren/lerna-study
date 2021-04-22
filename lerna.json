@@ -2,5 +2,8 @@
   "packages": [
     "packages/*"
   ],
-  "version": "independent"
+  "private":true,
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkSpaces": true
 }
