@@ -17,4 +17,6 @@ Cannot import a partial repo (i.e. import a project from another monorepo)
 Can optional use 'git rebase' to squash commit history.
 
 
+## `lerna create`
 
+Ask a series of questions and create a project (package). Not very useful command. Without proper bootstrapping.
