@@ -8,6 +8,9 @@ This project is for my experiment and study of Lerna Monorepo
 
 ## Basics & Bootstrapping
 
+- Use local version of lerna
+  - Set lerna version in package.json
+  - `yarn install`
 - Decide npm-client to use, npm or yarn
   - Upgrade yarn to v2: https://yarnpkg.com/getting-started/migration
     - `npm install -g yarn`
@@ -15,6 +18,16 @@ This project is for my experiment and study of Lerna Monorepo
 - Set root package.json to private to prevent publishing
   - `  "private":true,`
 - Decide versioning mode - "independent" or a version number (for locked)
+- hoist (or not)
+  - hoisting improves speed and disk space, issues: (1) phantom package, i.e. works well in development env, break outside, solution: use eslint-plugin-import package (2) not all tools strictly follow node's module resolution algorithm therefore some fails
+  To turn on: '--hoist' in CLI option or 
+  ```json
+    "command": {
+      "bootstrap": {
+        "hoist":"**"
+      }
+    },
+  ```    
 - packages - locations of projects
 
 Use yarn workspace, in lerna.json
