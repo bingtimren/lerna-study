@@ -6,5 +6,15 @@ This project is for my experiment and study of Lerna Monorepo
 
 `lerna init --independent`
 
+## Import
+
+`lerna import` import another GIT REPOSITORY into current monorepo as a project.
+--flatten: flatten MERGE commit as single change (not squash)
+--dest: change destination (by default under "./packages")
+
+Cannot import a partial repo (i.e. import a project from another monorepo)
+
+Can optional use 'git rebase' to squash commit history.
+
 
 
