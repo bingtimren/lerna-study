@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "noEmit": false,
+    "incremental": true
+  },
+  "extends": "../tsconfig.json",
+  "exclude": ["../src/**/*.test.ts"]
+}

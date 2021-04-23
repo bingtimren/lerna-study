@@ -1,0 +1,9 @@
+{
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "out": "build/docs/api",
+  "json": "build/docs/api/typedoc.json",
+  "name": "API Document",
+  "readme": "none",
+  "tsconfig": "config/tsconfig-build.json"
+}

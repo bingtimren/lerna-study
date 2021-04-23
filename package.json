@@ -3,10 +3,12 @@
   "private": true,
   "command": {
     "bootstrap": {
-      "hoist":"**"
+      "hoist": "**"
     }
   },
   "devDependencies": {
+    "@types/jest": "^26.0.22",
     "lerna": "^4.0.0"
-  }
+  },
+  "dependencies": {}
 }
