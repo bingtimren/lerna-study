@@ -65,6 +65,12 @@ Yarn workspace works well with lerna. All packages hoisted to root dir. This has
 --stream prefix output with package, recommended
 --since git-tag only run command in package that has changed since tag (not since last run)
 
+### `lerna version`
+
+Identify all packages changed since previous tagged release, manually prompt for new version, modify package metadata (package.json), run lifecycle scripts (preversion / version), commit changes and tag the commit, push to git remote.
+
+Can limit branch with a simple config.
+
 ### `lerna import`
 
 `lerna import` import another GIT REPOSITORY into current monorepo as a project.
