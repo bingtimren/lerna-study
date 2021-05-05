@@ -60,6 +60,11 @@ Yarn workspace works well with lerna. All packages hoisted to root dir. This has
 
 ## Learn Commands
 
+### `lerna run`
+
+--stream prefix output with package, recommended
+--since git-tag only run command in package that has changed since tag (not since last run)
+
 ### `lerna import`
 
 `lerna import` import another GIT REPOSITORY into current monorepo as a project.
