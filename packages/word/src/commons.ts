@@ -7,4 +7,4 @@
  * Just an example
  */
 export const WORD = 'Hi';
-export const HEY = 'hey-hey-hey-hey';
+export const HEY = 'hey-hey-hey';
