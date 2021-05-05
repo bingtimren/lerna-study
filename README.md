@@ -69,7 +69,19 @@ Yarn workspace works well with lerna. All packages hoisted to root dir. This has
 
 Identify all packages changed since previous tagged release, manually prompt for new version, modify package metadata (package.json), run lifecycle scripts (preversion / version), commit changes and tag the commit, push to git remote.
 
-Can limit branch with a simple config.
+--conventional-commits : use conventional commits specification to determine the version bump and generate CHANGELOG.md files
+--conventional-graduate : `lerna version --conventional-commits --conventional-graduate=package-2,package-4` graduate the specified package (bring out pre-release)
+--allow-branch : only allow version bumping in certain branch
+
+Lerna can check what commit is about what package so no need to identify the scope of change in commit message
+
+### `lerna publish`
+
+lerna publish              # publish packages that have changed since the last release
+lerna publish from-git     # explicitly publish packages tagged in the current commit
+lerna publish from-package # explicitly publish packages where the latest version is not present in the registry
+
+With --contents, able to publish a sub-directory with a package.json file.
 
 ### `lerna import`
 
