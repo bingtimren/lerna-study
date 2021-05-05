@@ -15,5 +15,10 @@
     "**": [
       "echo hello -- xxx"
     ]
+  },
+  "husky":{
+    "hooks": {
+      "pre-commit": "lint-staged -v"
+    }
   }
 }
