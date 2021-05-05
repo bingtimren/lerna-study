@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "git:hook:pre-commit": "lint-staged -v"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -15,10 +18,5 @@
     "**": [
       "echo hello -- xxx"
     ]
-  },
-  "husky":{
-    "hooks": {
-      "pre-commit": "lint-staged -v"
-    }
   }
 }
