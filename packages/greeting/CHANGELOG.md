@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/greeting@0.1.4...@bingsjs/greeting@0.2.0) (2021-05-05)
+
+
+### Features
+
+* dummy change in greeting to test version bumping ([ba422ca](https://github.com/bingtimren/lerna-study/commit/ba422cad11194469c0692dffd35557df4da21d37))
+
+
+
+
+
 ## [0.1.4](https://github.com/bingtimren/lerna-study/compare/@bingsjs/greeting@0.1.3...@bingsjs/greeting@0.1.4) (2021-05-05)
 
 
