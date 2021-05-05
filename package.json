@@ -1,11 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "command": {
-    "bootstrap": {
-      "hoist": "**"
-    }
-  },
+  "workspaces": [
+     "packages/*"
+  ],    
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "lerna": "^4.0.0"
