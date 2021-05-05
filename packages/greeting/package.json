@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/greeting",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Typescript project template",
   "main": "build/main/index.js",
   "module": "build/module/index.js",
@@ -74,7 +74,7 @@
     }
   },
   "dependencies": {
-    "@bingsjs/word": "^0.2.1"
+    "@bingsjs/word": "^0.2.2"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
