@@ -8,5 +8,5 @@ import { WORD } from '@bingsjs/word';
  * Just an example function
  */
 export function greeting(name: string): string {
-  return `${WORD}, ${name}!!?`;
+  return `${WORD}, ${name}!!?!`;
 }
