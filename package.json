@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "prepare":"lerna bootstrap; husky install",
     "git:hook:pre-commit": "lint-staged -v"
   },
   "workspaces": [
