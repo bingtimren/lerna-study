@@ -1,6 +1,7 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*",
+    "tools/*"
   ],
   "private":true,
   "version": "independent",

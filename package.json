@@ -6,7 +6,8 @@
     "git:hook:pre-commit": "lint-staged -v"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "tools/*"
   ],
   "devDependencies": {
     "@types/jest": "^26.0.22",
