@@ -74,6 +74,7 @@
     }
   },
   "dependencies": {
+    "@bingsjs/op-lint": "^0.1.0",
     "@bingsjs/word": "^0.2.2"
   },
   "publishConfig": {

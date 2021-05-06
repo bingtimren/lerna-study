@@ -10,3 +10,7 @@ import { WORD } from '@bingsjs/word';
 export function greeting(name: string): string {
   return `${WORD}, ${name}!!?!!`;
 }
+
+// to test eslint
+/* eslint-disable no-var */
+var n=1;

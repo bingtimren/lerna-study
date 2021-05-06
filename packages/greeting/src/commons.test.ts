@@ -7,3 +7,7 @@ describe('Example Test Suite', () => {
     expect(greetingResult.indexOf('Hi') === 0).toBe(true);
   });
 });
+
+// to test eslint
+// Although below is a lint error, "**/*.test.ts" is ignored
+var n=1;
