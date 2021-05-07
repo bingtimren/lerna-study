@@ -3,6 +3,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: [
       '@typescript-eslint',
+      'prettier'
     ],
     extends: [
       'eslint:recommended',
@@ -11,5 +12,9 @@ module.exports = {
     ignorePatterns: [
       "**/*.spec.ts",
       "**/*.test.ts"
-    ]
+    ],
+    rules: {
+      "prettier/prettier": "error",
+      "@typescript-eslint/no-unused-vars": "error"
+    }
   };
