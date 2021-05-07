@@ -11,5 +11,5 @@ export function greeting(name: string): string {
   return `${WORD}, ${name}!!?!!`;
 }
 
-// to test eslint
-const n = 1;
+// to test eslint, uncomment line below
+// var n = 1;

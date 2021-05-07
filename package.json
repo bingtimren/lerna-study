@@ -17,8 +17,8 @@
   },
   "dependencies": {},
   "lint-staged": {
-    "**": [
-      "echo hello -- xxx"
+    "**/*.ts": [
+      "op-lint -f "
     ]
   }
 }

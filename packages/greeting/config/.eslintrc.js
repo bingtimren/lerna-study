@@ -1,19 +1,19 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module' // Allows for the use of imports
+    sourceType: "module", // Allows for the use of imports
   },
-  ignorePatterns: ['**/*.test.ts'],
-  plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  ignorePatterns: ["**/*.test.ts"],
+  plugins: ["@typescript-eslint"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   rules: {
     // fixable rules
-    'no-extra-parens': 'error', // no extra parentheses
-    curly: 'error', // enforce consistent brace style
-    eqeqeq: 'error' // require using '===' and '!=='
-  }
+    "no-extra-parens": "error", // no extra parentheses
+    curly: "error", // enforce consistent brace style
+    eqeqeq: "error", // require using '===' and '!=='
+  },
   /* Example Rules
   "rules": {
     // enable additional rules
