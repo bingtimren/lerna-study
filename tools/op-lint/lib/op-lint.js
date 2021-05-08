@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-
-console.log(`ARGV: ${process.argv}`);
-
 const path = require("path");
 const childProcess = require("child_process");
 const { program } = require("commander");
@@ -15,12 +12,14 @@ function list() {
 // process arguments
 program
   .usage("[options] globs...")
+  .description("Opinionated lint, call eslint with pre-configurations. \nTip: always quote globs")
   .option(
     "-c, --pre-config <config>",
-    'choose a pre-config, default to "typescript"',
-    "typescript"
+    'choose a pre-config',
+    "default"
   )
-  .option("-l, --list", "list a pre-config and exit")
+  .option("-l, --list", "list available pre-configs and exit")
+  .option("-p, --print", "print the pre-config and exit")
   .option("-f, --fix", "automatically fix problems");
 
 program.parse(process.argv);
@@ -33,19 +32,26 @@ if (options.list) {
   process.exit(0);
 }
 
-// do linting
-// check dirs
-if (program.args.length === 0) {
-  console.error("Error: Missing globs");
-  process.exit(1);
-}
-
 // check pre-config
 const configFile = path.join(configsDir, `${options.preConfig}.js`);
 try {
   fs.accessSync(configFile, fs.constants.R_OK);
 } catch (err) {
   console.error(`Error: pre-config file ${configFile} is not accessible`);
+  process.exit(1);
+}
+
+// do print
+if (options.print) {
+  console.log(`================= ${options.preConfig}.js ===============\n`);
+  console.log(fs.readFileSync(configFile).toString());
+  process.exit(0);
+}
+
+// do linting
+// check dirs
+if (program.args.length === 0) {
+  console.error("Error: Missing globs");
   process.exit(1);
 }
 
