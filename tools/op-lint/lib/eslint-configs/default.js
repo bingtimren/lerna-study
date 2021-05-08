@@ -19,7 +19,7 @@ module.exports = {
     // for Javascript
     {
       files: ["*.js", "*.tsx"],
-      extends: ["eslint:recommended", "prettier"],
+      extends: ["airbnb-base", "prettier"],
       parserOptions: {
         ecmaVersion: 12,
       },
@@ -39,6 +39,7 @@ module.exports = {
       plugins: ["@typescript-eslint", "prettier"],
       extends: [
         "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         // put prettier LAST to override other configs
         "prettier",
