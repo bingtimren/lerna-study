@@ -1,9 +1,0 @@
-/* Building products */
-
-node_modules
-/build
-**/*.tsbuildinfo
-tests/package/package-lock.json
-
-/* Avoid checking in .npmrc which may contain the access token */
-.npmrc
