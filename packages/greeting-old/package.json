@@ -1,10 +1,9 @@
 {
-  "name": "@bingsjs/word",
-  "version": "0.2.2",
+  "name": "@bingsjs/greeting-old",
+  "version": "2.0.0",
   "description": "A Typescript project template",
   "main": "build/main/index.js",
   "module": "build/module/index.js",
-  "types": "build/main/index.d.ts",
   "files": [
     "build/main"
   ],
@@ -73,6 +72,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@bingsjs/op-lint": "^0.1.0",
+    "@bingsjs/word-old": "^0.2.2"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
