@@ -1,3 +1,10 @@
 # Lerna
 lerna-debug.log
 node_modules
+
+# build
+build
+dist
+
+# typescript
+*.tsbuildinfo

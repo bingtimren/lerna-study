@@ -1,0 +1,30 @@
+{
+  "name": "@bingsjs/op-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Base class for opinioned tools",
+  "author": "Bing Ren <bingtimren@gmail.com>",
+  "homepage": "https://github.com/bingtimren/lerna-study#readme",
+  "license": "ISC",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "type": "commonjs",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingtimren/lerna-study.git"
+  },
+  "scripts": {
+    "build":"tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/bingtimren/lerna-study/issues"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0"
+  }
+}

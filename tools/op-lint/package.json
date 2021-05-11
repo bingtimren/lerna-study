@@ -6,14 +6,14 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
   "license": "ISC",
-  "bin": "lib/op-lint.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "bin": "dist/main.js",
+  "type": "commonjs",
   "files": [
-    "lib"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsc"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -25,15 +25,17 @@
     "url": "https://github.com/bingtimren/lerna-study/issues"
   },
   "dependencies": {
-    "commander": "^7.2.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0"
-  },
-  "devDependencies": {
+    "@bingsjs/op-tools": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0",
     "eslint": "^7.25.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4"
   }
 }

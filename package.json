@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "prepare":"lerna bootstrap; husky install",
+    "prepare":"husky install",
     "git:hook:pre-commit": "lint-staged -v"
   },
   "workspaces": [
@@ -18,7 +18,7 @@
   "dependencies": {},
   "lint-staged": {
     "**/*.ts": [
-      "op-lint -f "
+      "op-lint fix"
     ]
   }
 }
