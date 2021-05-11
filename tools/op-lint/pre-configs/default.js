@@ -8,15 +8,13 @@ module.exports = {
     node: true,
   },
   ignorePatterns: [
-    "**/*.spec.ts",
-    "**/*.test.ts",
     "node_module",
     "build",
     "dist",
   ],
   // settings by file types
   overrides: [
-    // for Javascript
+    // for Javascript, use air-bnb configs & run prettier
     {
       files: ["*.js", "*.tsx"],
       extends: ["airbnb-base", "prettier"],
@@ -28,9 +26,27 @@ module.exports = {
         // own rules here
       },
     },
-    // for Typescript
+    // for Typescript tests, prettier only
+    {
+      files: ["*.test.ts", "*.spec.ts"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: 12,
+        sourceType: "module",
+      },
+      plugins: ["prettier"],
+      extends: [
+        "prettier",
+      ],
+      rules: {
+        "prettier/prettier": "error",
+      },
+    },    
+
+    // for Typescript, use recommended rules & run prettier
     {
       files: ["*.ts", "*.tsx"],
+      excludedFiles:"*.test.ts",
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaVersion: 12,

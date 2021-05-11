@@ -6,15 +6,37 @@ import commander from "commander";
 import fs from "fs";
 import path from "path";
 import chalk from "chalk";
+import childProcess from "child_process";
+
+interface OpinionedCommandOptions {
+  configFilesRelativeDir: string;
+  configFileSuffix: string;
+  defaultConfig: string;
+}
+
+const defaultOptions: OpinionedCommandOptions = {
+  configFileSuffix: ".json",
+  configFilesRelativeDir: "pre-configs",
+  defaultConfig: "default",
+};
+
+export function chalkedExecSync(CMD: string): void {
+  try {
+    childProcess.execSync(CMD, { stdio: "inherit" });
+  } catch (err) {
+    console.error(chalk.redBright("ERROR: command failed: ") + CMD);
+    process.exit(err.status);
+  }
+}
 
 export class OpinionedCommand {
   private prog: commander.Command;
+  private dirOptions: OpinionedCommandOptions;
   constructor(
     private baseDir: string,
-    private configFilesRelativeDir: string = "pre-configs",
-    private configFileSuffix: string = ".json",
-    private defaultConfig: string = "default"
+    options: Partial<OpinionedCommandOptions> = {}
   ) {
+    this.dirOptions = Object.assign(defaultOptions, options);
     this.prog = new commander.Command();
     this.prog
       .option("-c, --pre-config <config>", "choose a pre-config", "default")
@@ -35,7 +57,10 @@ export class OpinionedCommand {
         }
         fs.readdirSync(this.configDir)
           .map((fname) =>
-            fname.substr(0, fname.length - this.configFileSuffix.length)
+            fname.substr(
+              0,
+              fname.length - this.dirOptions.configFileSuffix.length
+            )
           )
           .forEach((conf) => {
             console.log(conf);
@@ -60,12 +85,12 @@ export class OpinionedCommand {
     return this.prog;
   }
   public get configDir(): string {
-    return path.join(this.baseDir, this.configFilesRelativeDir);
+    return path.join(this.baseDir, this.dirOptions.configFilesRelativeDir);
   }
   public get configFilePath(): string {
     return path.join(
       this.configDir,
-      `${this.opts.preConfig}${this.configFileSuffix}`
+      `${this.opts.preConfig}${this.dirOptions.configFileSuffix}`
     );
   }
   public get opts(): commander.OptionValues {

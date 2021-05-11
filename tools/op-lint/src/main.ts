@@ -1,27 +1,18 @@
 #!/usr/bin/env node
-import { OpinionedCommand } from "@bingsjs/op-tools";
-import childProcess from "child_process";
-import chalk from "chalk";
+import { OpinionedCommand, chalkedExecSync } from "@bingsjs/op-tools";
+import { join } from "path";
 
 function lintFix(opCmd: OpinionedCommand, fix: boolean, globs: string[]) {
   const joinedGlobs = globs.map((g) => `"${g}"`).join(" ");
   const CMD = `${opCmd.opts.exe} eslint --no-error-on-unmatched-pattern -c ${
     opCmd.configFilePath
   } ${fix ? "--fix" : ""} ${joinedGlobs}`;
-  try {
-    childProcess.execSync(CMD, { stdio: "inherit" });
-  } catch (err) {
-    console.error(chalk.redBright("ERROR: command failed: ") + CMD);
-    process.exit(err.status);
-  }
+  chalkedExecSync(CMD);
 }
 
-const opCmd = new OpinionedCommand(
-  join(__dirname, ".."),
-  "pre-configs",
-  ".js",
-  "default"
-);
+const opCmd = new OpinionedCommand(join(__dirname, ".."), {
+  configFileSuffix: ".js",
+});
 opCmd.program
   .command("lint <globs...>", { isDefault: true })
   .description("(default command) lint the files")
