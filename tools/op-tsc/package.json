@@ -1,17 +1,18 @@
 {
-  "name": "@bingsjs/op-tools",
+  "name": "@bingsjs/op-tsc",
   "version": "0.1.0",
-  "private": true,
-  "description": "Base class for opinioned tools",
+  "private": false,
+  "description": "Opinioned tsc, tsc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
   "license": "ISC",
-  "main": "dist/op-tools-base.js",
-  "types": "dist/op-tools-base.d.ts",
-  "type": "commonjs",
+  "bin": "dist/op-tsc.js",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bingtimren/lerna-study.git"
@@ -24,8 +25,10 @@
     "url": "https://github.com/bingtimren/lerna-study/issues"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
-    "commander": "^7.2.0",
-    "jsonc-parser": "^3.0.0"
+    "@bingsjs/op-tools": "^0.1.0",
+    "tsc-prog": "^2.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^4.2.4"
   }
 }

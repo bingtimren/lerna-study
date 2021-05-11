@@ -6,7 +6,7 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
   "license": "ISC",
-  "bin": "dist/main.js",
+  "bin": "dist/op-lint.js",
   "type": "commonjs",
   "files": [
     "dist"

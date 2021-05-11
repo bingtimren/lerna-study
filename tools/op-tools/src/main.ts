@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import chalk from "chalk";
 import childProcess from "child_process";
+import { parse } from "jsonc-parser";
 
 interface OpinionedCommandOptions {
   configFilesRelativeDir: string;
@@ -91,6 +92,21 @@ export class OpinionedCommand {
     return path.join(
       this.configDir,
       `${this.opts.preConfig}${this.dirOptions.configFileSuffix}`
+    );
+  }
+  public getConfigFileContent(): Buffer {
+    return fs.readFileSync(this.configFilePath);
+  }
+  public getConfigFileContentParsed() {
+    if (this.configFilePath.endsWith(".jsonc")) {
+      return parse(this.getConfigFileContent.toString());
+    } else if (this.configFilePath.endsWith(".json")) {
+      return JSON.parse(this.getConfigFileContent.toString());
+    } else if (this.configFilePath.endsWith(".js")) {
+      return require(this.configFilePath);
+    }
+    throw new Error(
+      `Unable to parse ${this.configFilePath}, unknown file type`
     );
   }
   public get opts(): commander.OptionValues {

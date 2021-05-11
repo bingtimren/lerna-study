@@ -7,11 +7,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  ignorePatterns: [
-    "node_module",
-    "build",
-    "dist",
-  ],
+  ignorePatterns: ["node_module", "build", "dist"],
   // settings by file types
   overrides: [
     // for Javascript, use air-bnb configs & run prettier
@@ -35,18 +31,16 @@ module.exports = {
         sourceType: "module",
       },
       plugins: ["prettier"],
-      extends: [
-        "prettier",
-      ],
+      extends: ["prettier"],
       rules: {
         "prettier/prettier": "error",
       },
-    },    
+    },
 
     // for Typescript, use recommended rules & run prettier
     {
       files: ["*.ts", "*.tsx"],
-      excludedFiles:"*.test.ts",
+      excludedFiles: "*.test.ts",
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaVersion: 12,
