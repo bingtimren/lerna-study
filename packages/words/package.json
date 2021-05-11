@@ -17,6 +17,7 @@
     "url": "git+https://github.com/bingtimren/lerna-study.git"
   },
   "scripts": {
+    "build":"op-tsc",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
