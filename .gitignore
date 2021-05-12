@@ -8,3 +8,6 @@ dist
 
 # typescript
 *.tsbuildinfo
+
+# optools files
+.opToolsConfig

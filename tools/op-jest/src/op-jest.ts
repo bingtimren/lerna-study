@@ -11,6 +11,7 @@ opCmd.program.option(
 );
 opCmd.program.option("-w, --watch", "watch file change and run related tests");
 opCmd.program.option("--coverage", "collect and enforce coverage");
+opCmd.program.option("-r, --report", "open coverage report");
 opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
@@ -23,6 +24,7 @@ opCmd.program
       `${opCmd.opts.coverage ? "--coverage" : ""}`;
     if (
       opCmd.opts.coverage &&
+      opCmd.opts.report &&
       opCmd.getConfigFileContentParsed().coverageDirectory
     ) {
       const rptPath = join(
