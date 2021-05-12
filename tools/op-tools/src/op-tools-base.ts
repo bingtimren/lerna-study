@@ -21,15 +21,6 @@ const defaultOptions: OpinionedCommandOptions = {
   defaultConfig: "default",
 };
 
-export function chalkedExecSync(CMD: string): void {
-  try {
-    childProcess.execSync(CMD, { stdio: "inherit" });
-  } catch (err) {
-    console.error(chalk.redBright("ERROR: command failed: ") + CMD);
-    process.exit(err.status);
-  }
-}
-
 export class OpinionedCommand {
   private prog: commander.Command;
   private dirOptions: OpinionedCommandOptions;
@@ -112,5 +103,25 @@ export class OpinionedCommand {
   }
   public async parse(argv?: string[]): Promise<void> {
     this.prog.parseAsync(argv ? argv : process.argv);
+  }
+  public copyConfig(fname: string, dirName = ".opToolsConfig"): void {
+    if (!fs.existsSync(dirName)) {
+      fs.mkdirSync(dirName);
+    }
+    if (!fs.statSync(dirName).isDirectory()) {
+      throw new Error(`${dirName} is not a directory`);
+    }
+    fs.copyFileSync(this.configFilePath, path.join(dirName, fname));
+  }
+  public chalkedExecSync(CMD: string): void {
+    if (this.opts.verbose) {
+      console.log(chalk.cyanBright("Running command: ") + CMD);
+    }
+    try {
+      childProcess.execSync(CMD, { stdio: "inherit" });
+    } catch (err) {
+      console.error(chalk.redBright("ERROR: command failed: ") + CMD);
+      process.exit(err.status);
+    }
   }
 }

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-import { OpinionedCommand, chalkedExecSync } from "@bingsjs/op-tools";
+import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 
-function lintFix(opCmd: OpinionedCommand, fix: boolean, globs: string[]) {
+function lintFix(opCmd: OpinionedCommand, fix: boolean, globs: string[]): void {
   const joinedGlobs = globs.map((g) => `"${g}"`).join(" ");
   const CMD = `${opCmd.opts.exe} eslint --no-error-on-unmatched-pattern -c ${
     opCmd.configFilePath
   } ${fix ? "--fix" : ""} ${joinedGlobs}`;
-  chalkedExecSync(CMD);
+  opCmd.chalkedExecSync(CMD);
 }
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
