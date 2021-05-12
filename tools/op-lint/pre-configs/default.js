@@ -36,7 +36,15 @@ module.exports = {
         "prettier/prettier": "error",
       },
     },
-
+    // for JSON
+    {
+      files: ["*.json"],
+      plugins: ["json"],
+      extends: ["plugin:json/recommended-with-comments"],
+      rules: {
+        "json/*": ["error", "allowComments"],
+      },
+    },
     // for Typescript, use recommended rules & run prettier
     {
       files: ["*.ts", "*.tsx"],

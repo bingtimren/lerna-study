@@ -1,9 +1,6 @@
 {
-  "packages": [
-    "packages/*",
-    "tools/*"
-  ],
-  "private":true,
+  "packages": ["packages/*", "tools/*"],
+  "private": true,
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -13,5 +10,5 @@
       "message": "chore(release): publish",
       "registry": "http://localhost:4873/"
     }
-  }  
+  }
 }
