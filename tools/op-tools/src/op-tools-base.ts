@@ -110,7 +110,7 @@ export class OpinionedCommand {
   public get opts(): commander.OptionValues {
     return this.prog.opts();
   }
-  public parse(argv?: string[]): void {
-    this.prog.parse(argv ? argv : process.argv);
+  public async parse(argv?: string[]): Promise<void> {
+    this.prog.parseAsync(argv ? argv : process.argv);
   }
 }

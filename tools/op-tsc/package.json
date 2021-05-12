@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@bingsjs/op-tools": "^0.1.0",
+    "ts-purify": "^3.0.1",
     "tsc-prog": "^2.2.1"
   },
   "peerDependencies": {
