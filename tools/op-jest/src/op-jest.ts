@@ -16,9 +16,9 @@ opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
   .action(() => {
-    opCmd.copyConfig(".op-jest.config.js");
+    opCmd.localCopyConfig(".op-jest.config.js");
     let CMD =
-      `${opCmd.opts.exe} jest -c .opToolsConfig/.op-jest.config.js ` +
+      `${opCmd.opts.exe} jest -c ${opCmd.configFilePathCopiedLocal} ` +
       `${opCmd.opts.onlyChanged ? "--onlyChanged" : ""} ` +
       `${opCmd.opts.watch ? "--watch" : ""}` +
       `${opCmd.opts.coverage ? "--coverage" : ""}`;

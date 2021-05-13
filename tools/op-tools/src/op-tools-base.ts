@@ -24,6 +24,7 @@ const defaultOptions: OpinionedCommandOptions = {
 export class OpinionedCommand {
   private prog: commander.Command;
   private dirOptions: OpinionedCommandOptions;
+  private localConfigPath: string | undefined;
   constructor(
     private baseDir: string,
     options: Partial<OpinionedCommandOptions> = {}
@@ -80,10 +81,18 @@ export class OpinionedCommand {
     return path.join(this.baseDir, this.dirOptions.configFilesRelativeDir);
   }
   public get configFilePath(): string {
+    return this.localConfigPath
+      ? this.localConfigPath
+      : this.configFilePathInPackage;
+  }
+  public get configFilePathInPackage(): string {
     return path.join(
       this.configDir,
       `${this.opts.preConfig}${this.dirOptions.configFileSuffix}`
     );
+  }
+  public get configFilePathCopiedLocal(): string | undefined {
+    return this.localConfigPath;
   }
   public getConfigFileContent(): Buffer {
     return fs.readFileSync(this.configFilePath);
@@ -94,7 +103,10 @@ export class OpinionedCommand {
     } else if (this.configFilePath.endsWith(".json")) {
       return JSON.parse(this.getConfigFileContent().toString());
     } else if (this.configFilePath.endsWith(".js")) {
-      return require(this.configFilePath);
+      const absPath = path.isAbsolute(this.configFilePath)
+        ? this.configFilePath
+        : path.join(process.cwd(), this.configFilePath);
+      return require(absPath);
     }
     throw new Error(`Cannot parse ${this.configFilePath}, unknown file type.`);
   }
@@ -104,14 +116,16 @@ export class OpinionedCommand {
   public async parse(argv?: string[]): Promise<void> {
     this.prog.parseAsync(argv ? argv : process.argv);
   }
-  public copyConfig(fname: string, dirName = ".opToolsConfig"): void {
+  public localCopyConfig(fname: string, dirName = ".opToolsConfig"): void {
     if (!fs.existsSync(dirName)) {
       fs.mkdirSync(dirName);
     }
     if (!fs.statSync(dirName).isDirectory()) {
       throw new Error(`${dirName} is not a directory`);
     }
-    fs.copyFileSync(this.configFilePath, path.join(dirName, fname));
+    const localConfigPath = path.join(dirName, fname);
+    fs.copyFileSync(this.configFilePathInPackage, localConfigPath);
+    this.localConfigPath = localConfigPath;
   }
   public chalkedExecSync(CMD: string): void {
     if (this.opts.verbose) {

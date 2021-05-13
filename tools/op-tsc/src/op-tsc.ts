@@ -2,8 +2,9 @@
 
 import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
-import { build } from "tsc-prog";
+import { build } from "@bingsjs/tsc-prog";
 import { cleanAllFiles } from "ts-purify";
+import chalk from "chalk";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
   configFileSuffix: ".tsconfig.jsonc",
@@ -21,7 +22,11 @@ opCmd.program
         config.compilerOptions.outDir
       );
     } catch (err) {
-      console.log("WARNING: ts-purify failed. Maybe 'outDir' does not exist?");
+      console.log(
+        chalk.yellowBright(
+          "WARNING: ts-purify failed. Maybe 'outDir' does not exist?"
+        )
+      );
     }
 
     const buildConfig = {
@@ -30,6 +35,10 @@ opCmd.program
       include: config.include,
       exclude: config.exclude,
     };
-    build(buildConfig);
+    const diagnostics = build(buildConfig);
+    if (diagnostics.length > 0) {
+      console.log(chalk.redBright("ERROR: tsc build failed"));
+      process.exit(1);
+    }
   });
 opCmd.parse();

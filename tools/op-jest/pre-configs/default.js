@@ -4,6 +4,7 @@ module.exports = {
   testEnvironment: "node",
   // paths
   rootDir: "../src",
+  testMatch: ["**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
   coverageDirectory: "../dist/docs/coverage",
   coverageThreshold: {
     global: {
