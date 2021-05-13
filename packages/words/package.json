@@ -24,5 +24,8 @@
   },
   "bugs": {
     "url": "https://github.com/bingtimren/lerna-study/issues"
+  },
+  "devDependencies": {
+    "@bingsjs/op-tsc": "^0.1.0"
   }
 }
