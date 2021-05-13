@@ -5,7 +5,7 @@ module.exports = {
   // paths
   rootDir: "..",
   testMatch: ["**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-  coverageDirectory: "../dist/docs/coverage",
+  coverageDirectory: "dist/docs/coverage",
   coverageThreshold: {
     global: {
       branches: 100,
@@ -14,5 +14,9 @@ module.exports = {
       statements: -10,
     },
   },
-  collectCoverageFrom: ["**/src/**/*.ts", "**/src/**/*.js"],
+  collectCoverageFrom: [
+    "**/src/**/*.ts",
+    "**/src/**/*.js",
+    "!**/node_modules/**",
+  ],
 };

@@ -2,11 +2,11 @@
  * Base class of opinioned tools
  */
 
-import commander from "commander";
-import fs from "fs";
-import path from "path";
-import chalk from "chalk";
-import childProcess from "child_process";
+import * as commander from "commander";
+import * as fs from "fs";
+import * as path from "path";
+import * as chalk from "chalk";
+import * as childProcess from "child_process";
 import { parse as jsoncParse } from "jsonc-parser";
 
 interface OpinionedCommandOptions {
@@ -127,7 +127,7 @@ export class OpinionedCommand {
     fs.copyFileSync(this.configFilePathInPackage, localConfigPath);
     this.localConfigPath = localConfigPath;
   }
-  public chalkedExecSync(CMD: string): void {
+  public chalkedExecSync(CMD: string, exitOnError = true): any {
     if (this.opts.verbose) {
       console.log(chalk.cyanBright("Running command: ") + CMD);
     }
@@ -135,7 +135,11 @@ export class OpinionedCommand {
       childProcess.execSync(CMD, { stdio: "inherit" });
     } catch (err) {
       console.error(chalk.redBright("ERROR: command failed: ") + CMD);
-      process.exit(err.status);
+      if (exitOnError) {
+        process.exit(err.status);
+      } else {
+        return err;
+      }
     }
   }
 }

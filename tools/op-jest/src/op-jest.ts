@@ -18,24 +18,26 @@ opCmd.program
   .description("(default command) run jest")
   .action(() => {
     opCmd.localCopyConfig(".op-jest.config.js");
-    let CMD =
+    const CMD =
       `${opCmd.opts.exe} jest -c ${opCmd.configFilePathCopiedLocal} ` +
       `${opCmd.opts.onlyChanged ? "--onlyChanged" : ""} ` +
       `${opCmd.opts.debug ? "--runInBand " : ""}` +
-      `${opCmd.opts.watch ? "--watch" : ""}` +
+      `${opCmd.opts.watch ? "--watchAll" : ""}` +
       `${opCmd.opts.coverage ? "--coverage" : ""}`;
-    if (
+    const toReport =
       opCmd.opts.coverage &&
       opCmd.opts.report &&
-      opCmd.getConfigFileContentParsed().coverageDirectory
-    ) {
+      opCmd.getConfigFileContentParsed().coverageDirectory;
+    const jestResult = opCmd.chalkedExecSync(CMD, !toReport);
+    if (toReport) {
       const rptPath = join(
-        ".opToolsConfig",
         opCmd.getConfigFileContentParsed().coverageDirectory,
         "lcov-report/index.html"
       );
-      CMD = CMD + `; yarn open-cli ${rptPath}`;
+      opCmd.chalkedExecSync(`yarn open-cli ${rptPath}`);
     }
-    opCmd.chalkedExecSync(CMD);
+    if (jestResult?.status) {
+      process.exit(jestResult.status);
+    }
   });
 opCmd.parse();

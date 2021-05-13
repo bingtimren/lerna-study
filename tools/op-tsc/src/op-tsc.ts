@@ -4,7 +4,7 @@ import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 import { build } from "@bingsjs/tsc-prog";
 import { cleanAllFiles } from "ts-purify";
-import chalk from "chalk";
+import * as chalk from "chalk";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
   configFileSuffix: ".tsconfig.jsonc",
