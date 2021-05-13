@@ -12,6 +12,7 @@ opCmd.program.option(
 opCmd.program.option("-w, --watch", "watch file change and run related tests");
 opCmd.program.option("--coverage", "collect and enforce coverage");
 opCmd.program.option("-r, --report", "open coverage report");
+opCmd.program.option("-d, --debug", "run in debug mode");
 opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
@@ -20,6 +21,7 @@ opCmd.program
     let CMD =
       `${opCmd.opts.exe} jest -c ${opCmd.configFilePathCopiedLocal} ` +
       `${opCmd.opts.onlyChanged ? "--onlyChanged" : ""} ` +
+      `${opCmd.opts.debug ? "--runInBand " : ""}` +
       `${opCmd.opts.watch ? "--watch" : ""}` +
       `${opCmd.opts.coverage ? "--coverage" : ""}`;
     if (
