@@ -14,5 +14,5 @@ module.exports = {
       statements: -10,
     },
   },
-  collectCoverageFrom: ["**/*.ts"],
+  collectCoverageFrom: ["**/src/**/*.ts", "**/src/**/*.js"],
 };
