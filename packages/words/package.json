@@ -6,6 +6,8 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
   "license": "ISC",
+  "main": "dist/words.js",
+  "types": "dist/words.d.ts",
   "files": [
     "dist"
   ],
@@ -17,7 +19,7 @@
     "url": "git+https://github.com/bingtimren/lerna-study.git"
   },
   "scripts": {
-    "build":"op-tsc",
+    "build": "op-tsc",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
