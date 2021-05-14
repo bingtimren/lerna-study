@@ -1,7 +1,7 @@
 {
   "name": "@bingsjs/op-tools",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Base class for opinioned tools",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
