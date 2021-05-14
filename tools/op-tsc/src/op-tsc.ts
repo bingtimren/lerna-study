@@ -4,7 +4,7 @@ import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 import { build } from "@bingsjs/tsc-prog";
 import { cleanAllFiles } from "ts-purify";
-import * as chalk from "chalk";
+import { yellowBright, redBright } from "chalk";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
   configFileSuffix: ".tsconfig.jsonc",
@@ -23,7 +23,7 @@ opCmd.program
       );
     } catch (err) {
       console.log(
-        chalk.yellowBright(
+        yellowBright(
           "WARNING: ts-purify failed. Maybe 'outDir' does not exist?"
         )
       );
@@ -37,7 +37,7 @@ opCmd.program
     };
     const diagnostics = build(buildConfig);
     if (diagnostics.length > 0) {
-      console.log(chalk.redBright("ERROR: tsc build failed"));
+      console.log(redBright("ERROR: tsc build failed"));
       process.exit(1);
     }
   });
