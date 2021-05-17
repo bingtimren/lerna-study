@@ -97,6 +97,7 @@ export class OpinionedCommand {
   public getConfigFileContent(): Buffer {
     return fs.readFileSync(this.configFilePath);
   }
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   public getConfigFileContentParsed(): any {
     if (this.configFilePath.endsWith(".jsonc")) {
       return jsoncParse(this.getConfigFileContent().toString());
@@ -127,6 +128,7 @@ export class OpinionedCommand {
     fs.copyFileSync(this.configFilePathInPackage, localConfigPath);
     this.localConfigPath = localConfigPath;
   }
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   public chalkedExecSync(CMD: string, exitOnError = true): any {
     if (this.opts.verbose) {
       console.log(chalk.cyanBright("Running command: ") + CMD);
