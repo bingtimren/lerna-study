@@ -28,6 +28,8 @@
     "@bingsjs/op-tools": "^0.1.0",
     "@bingsjs/tsc-prog": "^2.3.0",
     "chalk": "^4.1.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
     "ts-purify": "^3.0.1"
   },
   "peerDependencies": {
