@@ -209,7 +209,10 @@ export class OpinionedCommand {
    * @param CMD
    * @returns error object if execution fails, or nothing
    */
-  public chalkedExecSync(CMD: string): unknown {
+  public chalkedExecSync(
+    CMD: string,
+    exitOnError = true
+  ): undefined | childProcess.SpawnSyncReturns<Buffer> {
     if (this.opts.verbose) {
       console.log(chalk.cyanBright("Running command: ") + CMD);
     }
@@ -217,7 +220,11 @@ export class OpinionedCommand {
       childProcess.execSync(CMD, { stdio: "inherit" });
     } catch (err) {
       console.error(chalk.redBright("ERROR: command failed: ") + CMD);
-      return err;
+      if (exitOnError) {
+        process.exit(err.status);
+      } else {
+        return err as childProcess.SpawnSyncReturns<Buffer>;
+      }
     }
   }
 }

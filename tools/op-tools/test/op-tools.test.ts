@@ -5,6 +5,7 @@ import { Command } from "commander";
 
 const mockedLog = jest.spyOn(console, "log");
 const mockedError = jest.spyOn(console, "error");
+const mockedExit = jest.spyOn(process, "exit");
 
 const testTable = [];
 for (const useLocalCopy of [true, false]) {
@@ -16,6 +17,7 @@ for (const useLocalCopy of [true, false]) {
 afterAll(() => {
   mockedLog.mockRestore();
   mockedError.mockRestore();
+  mockedExit.mockRestore();
   rmSync(".opToolsConfig", { recursive: true, force: true });
 });
 
@@ -27,6 +29,7 @@ describe.each(testTable)(
     beforeEach(() => {
       mockedLog.mockReset();
       mockedError.mockReset();
+      mockedExit.mockReset();
       opCmd =
         suffix !== defaultOptions.configFileSuffix
           ? new OpinionedCommand(__dirname, {
@@ -151,13 +154,20 @@ describe.each(testTable)(
     });
     it(`chalkedExecSync runs a failing command should return error`, () => {
       opCmd.parse(["node", "op-tools.js", "list"]);
-      expect(opCmd.chalkedExecSync("not-a-command-absolutely")).toBeDefined();
+      expect(
+        Object.keys(opCmd.chalkedExecSync("not-a-command-absolutely", false))
+      ).toContain("status");
       expect(
         mockedError.mock.calls
           .map((messages) => messages.join(" "))
           .join(" ")
           .match(/ERROR: command failed: .*not-a-command/).length
       ).toEqual(1);
+    });
+    it(`chalkedExecSync runs a failing command should exit`, () => {
+      opCmd.parse(["node", "op-tools.js", "list"]);
+      opCmd.chalkedExecSync("not-a-command-absolutely");
+      expect(mockedExit.mock.calls[0][0]).toBeGreaterThan(0);
     });
   }
 );
