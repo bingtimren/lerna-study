@@ -27,11 +27,11 @@ opCmd.program
     const toReport =
       opCmd.opts.coverage &&
       opCmd.opts.report &&
-      opCmd.getConfigFileContentParsed().coverageDirectory;
-    const jestResult = opCmd.chalkedExecSync(CMD, !toReport);
+      (opCmd.getConfigFileContentParsed() as any).coverageDirectory;
+    const jestResult = opCmd.chalkedExecSync(CMD, false);
     if (toReport) {
       const rptPath = join(
-        opCmd.getConfigFileContentParsed().coverageDirectory,
+        (opCmd.getConfigFileContentParsed() as any).coverageDirectory,
         "lcov-report/index.html"
       );
       opCmd.chalkedExecSync(`yarn open-cli ${rptPath}`);
@@ -40,4 +40,4 @@ opCmd.program
       process.exit(jestResult.status);
     }
   });
-opCmd.parse();
+opCmd.parse(process.argv);

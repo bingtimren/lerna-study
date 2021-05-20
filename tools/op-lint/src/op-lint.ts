@@ -21,4 +21,4 @@ opCmd.program
   .command("fix <globs...>")
   .description("lint and fix the files")
   .action(lintFix.bind(undefined, opCmd, true));
-opCmd.parse();
+opCmd.parse(process.argv);

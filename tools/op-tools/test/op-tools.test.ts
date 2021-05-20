@@ -3,11 +3,13 @@ import { statSync, readFileSync, rmSync } from "fs";
 import { join } from "path";
 import { Command } from "commander";
 
+// const somethingWrong : string = 12;
+
 const mockedLog = jest.spyOn(console, "log");
 const mockedError = jest.spyOn(console, "error");
 const mockedExit = jest.spyOn(process, "exit");
 
-const testTable = [];
+const testTable: [boolean, string][] = [];
 for (const useLocalCopy of [true, false]) {
   for (const suffix of [".js", ".json", ".jsonc"]) {
     testTable.push([useLocalCopy, suffix]);
@@ -58,9 +60,9 @@ describe.each(testTable)(
     });
     it(`getter configFilePathCopiedLocal able to get config file, if already locally copied`, () => {
       if (useLocalCopy) {
-        expect(statSync(opCmd.configFilePathCopiedLocal).isFile()).toEqual(
-          true
-        );
+        expect(
+          statSync(<string>opCmd.configFilePathCopiedLocal).isFile()
+        ).toEqual(true);
       } else {
         expect(opCmd.configFilePathCopiedLocal).toBeUndefined();
       }
@@ -75,12 +77,11 @@ describe.each(testTable)(
       opCmd.parse(["node", "op-tools.js", "-v", "list"]);
       expect(console.log).toHaveBeenCalledWith("default");
       expect(console.log).toHaveBeenCalledWith("alternate");
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/Pre-configuration file dir\:/).length
-      ).toEqual(1);
+      const matchedLog = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/Pre-configuration file dir\:/);
+      expect(matchedLog !== null && matchedLog.length === 1).toEqual(true);
     });
     it(`able to handle "list" command`, () => {
       opCmd.parse(["node", "op-tools.js", "list"]);

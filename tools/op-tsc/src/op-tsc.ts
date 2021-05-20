@@ -14,13 +14,15 @@ opCmd.program
   .command("build", { isDefault: true })
   .description("run tsc --build")
   .action(async () => {
-    const config = opCmd.getConfigFileContentParsed();
+    const config = opCmd.getConfigFileContentParsed() as any;
     // first do purify
     try {
-      await cleanAllFiles(
-        config.compilerOptions.rootDir,
-        config.compilerOptions.outDir
-      );
+      if (config?.compilerOptions?.rootDir && config?.compilerOptions?.outDir) {
+        await cleanAllFiles(
+          config.compilerOptions.rootDir,
+          config.compilerOptions.outDir
+        );
+      }
     } catch (err) {
       console.log(
         yellowBright(
@@ -31,9 +33,9 @@ opCmd.program
 
     const buildConfig = {
       basePath: process.cwd(),
-      compilerOptions: config.compilerOptions,
-      include: config.include,
-      exclude: config.exclude,
+      compilerOptions: config?.compilerOptions,
+      include: config?.include,
+      exclude: config?.exclude,
     };
     const diagnostics = build(buildConfig);
     if (diagnostics.length > 0) {
@@ -41,4 +43,4 @@ opCmd.program
       process.exit(1);
     }
   });
-opCmd.parse();
+opCmd.parse(process.argv);
