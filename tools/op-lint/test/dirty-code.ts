@@ -1,2 +1,2 @@
 var someValue = 1
-export const value = someValue
+export          const value = someValue
