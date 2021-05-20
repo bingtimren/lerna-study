@@ -3,7 +3,7 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   // paths
-  rootDir: "..",
+  rootDir: ".",
   testMatch: ["**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
   coverageDirectory: "dist/docs/coverage",
   coverageThreshold: {

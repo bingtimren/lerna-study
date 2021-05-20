@@ -90,37 +90,32 @@ describe.each(testTable)(
     });
     it(`able to handle "print" command`, () => {
       opCmd.parse(["node", "op-tools.js", "print"]);
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/\"?one\"?\s*\:\s*1\s*,?/).length
-      ).toEqual(1);
+      const logMatch = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/\"?one\"?\s*\:\s*1\s*,?/);
+      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
     });
     it(`able to handle "print" command with -c parameter`, () => {
       opCmd.parse(["node", "op-tools.js", "-c", "alternate", "print"]);
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/\"?alternateOne\"?\s*\:\s*1\s*,?/).length
-      ).toEqual(1);
+      const logMatch = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/\"?alternateOne\"?\s*\:\s*1\s*,?/);
+      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
     });
     it(`able to handle "print" command with -c -v parameter`, () => {
       opCmd.parse(["node", "op-tools.js", "-c", "alternate", "-v", "print"]);
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/\"?alternateOne\"?\s*\:\s*1\s*,?/).length
-      ).toEqual(1);
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/Pre\-config\: .*alternate.*Pre-config File\:.*alternate/)
-          .length
-      ).toEqual(1);
+      const logMatch = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/\"?alternateOne\"?\s*\:\s*1\s*,?/);
+      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
+      const logMatch2 = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/Pre\-config\: .*alternate.*Pre-config File\:.*alternate/);
+      expect(logMatch2 !== null && logMatch2.length === 1).toEqual(true);
     });
     it(`able to access program from getter`, () => {
       expect(opCmd.program).toBeInstanceOf(Command);
@@ -146,24 +141,24 @@ describe.each(testTable)(
     it(`chalkedExecSync runs a command should return undefined`, () => {
       opCmd.parse(["node", "op-tools.js", "-v", "list"]);
       expect(opCmd.chalkedExecSync("ls")).toEqual(undefined);
-      expect(
-        mockedLog.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/Running command: .*ls/).length
-      ).toEqual(1);
+      const logMatch = mockedLog.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/Running command: .*ls/);
+      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
     });
     it(`chalkedExecSync runs a failing command should return error`, () => {
       opCmd.parse(["node", "op-tools.js", "list"]);
       expect(
-        Object.keys(opCmd.chalkedExecSync("not-a-command-absolutely", false))
+        Object.keys(
+          opCmd.chalkedExecSync("not-a-command-absolutely", false) as Object
+        )
       ).toContain("status");
-      expect(
-        mockedError.mock.calls
-          .map((messages) => messages.join(" "))
-          .join(" ")
-          .match(/ERROR: command failed: .*not-a-command/).length
-      ).toEqual(1);
+      const logMatch = mockedError.mock.calls
+        .map((messages) => messages.join(" "))
+        .join(" ")
+        .match(/ERROR: command failed: .*not-a-command/);
+      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
     });
     it(`chalkedExecSync runs a failing command should exit`, () => {
       opCmd.parse(["node", "op-tools.js", "list"]);
