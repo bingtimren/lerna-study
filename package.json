@@ -27,13 +27,13 @@
   "dependencies": {},
   "lint-staged": {
     "**/*.ts": [
-      "eslint --no-error-on-unmatched-pattern --fix"
+      "eslint -c root-eslintrc.js --no-error-on-unmatched-pattern --fix"
     ],
     "**/*.js": [
-      "eslint --no-error-on-unmatched-pattern --fix"
+      "eslint -c root-eslintrc.js --no-error-on-unmatched-pattern --fix"
     ],
     "**/*.json": [
-      "eslint --no-error-on-unmatched-pattern --fix",
+      "eslint -c root-eslintrc.js --no-error-on-unmatched-pattern --fix",
       "prettier --write"
     ]
   }
