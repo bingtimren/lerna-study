@@ -12,7 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-lint.js"
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-lint.js",
+    "test": "jest"
   },
   "publishConfig": {
     "access": "public"
