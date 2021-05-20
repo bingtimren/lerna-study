@@ -4,7 +4,8 @@
     /* Basic Options */
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "strict": true /* Enable all strict type-checking options. */
+    "strict": true /* Enable all strict type-checking options. */,
+    "esModuleInterop": true
   },
   "include": ["**/*.ts"]
 }
