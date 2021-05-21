@@ -3,7 +3,7 @@ import { readFileSync, copyFileSync } from "fs";
 describe("op-lint", () => {
   it("op-lint lints Typescript", () => {
     try {
-      execSync("yarn op-lint test/dirty-code.ts 2>&1");
+      execSync("dist/op-lint.js test/dirty-code.ts 2>&1");
       fail("should throw");
     } catch (error) {
       // expect to fail
@@ -17,7 +17,7 @@ describe("op-lint", () => {
   });
   it("op-lint lints Javascript", () => {
     try {
-      execSync("yarn op-lint test/dirty-code.js 2>&1");
+      execSync("dist/op-lint.js test/dirty-code.js 2>&1");
       fail("should throw");
     } catch (error) {
       // expect to fail
@@ -37,7 +37,7 @@ describe("op-lint", () => {
   });
   it("op-lint lints JSON", () => {
     try {
-      execSync("yarn op-lint test/dirty-code.json 2>&1");
+      execSync("dist/op-lint.js test/dirty-code.json 2>&1");
       fail("should throw");
     } catch (error) {
       // expect to fail
@@ -49,7 +49,7 @@ describe("op-lint", () => {
     }
   });
   it("op-lint fixes Typescript and Javascript", () => {
-    execSync("yarn op-lint fix test/fixme.?s 2>&1");
+    execSync("dist/op-lint.js fix test/fixme.?s 2>&1");
     const js = readFileSync("test/fixme.js").toString();
     expect(js).toMatch(/const someValue \= 1\;/);
     expect(js).toMatch(/someValue\,/);
