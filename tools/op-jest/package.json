@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig-build.json",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "test/run.js"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/lerna-study/issues"
