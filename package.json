@@ -6,7 +6,6 @@
     "git:hook:pre-commit": "lint-staged -v"
   },
   "workspaces": [
-    "packages/*",
     "tools/*"
   ],
   "devDependencies": {
