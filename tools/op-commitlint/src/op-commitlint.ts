@@ -27,7 +27,7 @@ opCmd.program
     if (lintResult.errors && lintResult.errors.length > 1) {
       lintResult.errors.forEach((err) => {
         console.log(
-          chalk.redBright(`Git message error ${err.name}: `) + err.message
+          chalk.redBright(`Git message error: ${err.name} - `) + err.message
         );
       });
       process.exit(1);
