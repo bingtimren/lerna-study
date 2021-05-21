@@ -15,7 +15,16 @@ opCmd.program
   .description("(default command) lint the commit message with -e")
   .action(async (messageFile: string) => {
     const config = opCmd.getConfigFileContentParsed();
-    const message = readFileSync(messageFile).toString();
+    let message: string;
+    try {
+      message = readFileSync(messageFile).toString();
+    } catch (err) {
+      console.error(
+        chalk.redBright(`Error: cannot read commit message from ${messageFile}`)
+      );
+      process.exit(1);
+    }
+
     const opts = await load(config as any);
     const lintResult = await lint(
       message,
