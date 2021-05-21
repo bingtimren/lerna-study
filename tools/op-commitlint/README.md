@@ -5,7 +5,13 @@
 ## Usage
 
 ```
-const opCommitlint = require('@bingsjs/op-commitlint');
+$yarn husky add .husky/commit-msg 'yarn op-commitlint $1'
 
-// TODO: DEMONSTRATE API
+```
+
+or put a line in commit-msg as
+
+```
+yarn op-commitlint $1
+
 ```
