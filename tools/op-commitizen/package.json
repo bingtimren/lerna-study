@@ -1,0 +1,29 @@
+{
+  "name": "@bingsjs/op-commitizen",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Opinioned commitizen with default configuration for conventional changelog",
+  "author": "Bing Ren <bingtimren@gmail.com>",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
+  "license": "ISC",
+  "main": "lib/op-commitizen.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingtimren/op-tools.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/bingtimren/op-tools/issues"
+  },
+  "dependencies": {
+    "commitizen": "^4.2.4"
+  }
+}
