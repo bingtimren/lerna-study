@@ -14,7 +14,8 @@
     "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "scripts": {
-    "test": "echo no test and it's ok"
+    "build": "echo no build is needed",
+    "test": "echo no test and it is ok"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
