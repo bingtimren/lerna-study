@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-lint",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Opinionated eslint configured to lint typescript and others",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
