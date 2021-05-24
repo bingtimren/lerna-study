@@ -8,7 +8,8 @@
   "license": "ISC",
   "bin": "dist/op-commitlint.js",
   "files": [
-    "dist"
+    "dist",
+    "pre-configs"
   ],
   "scripts": {
     "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-commitlint.js",

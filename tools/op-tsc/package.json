@@ -8,7 +8,8 @@
   "license": "ISC",
   "bin": "dist/op-tsc.js",
   "files": [
-    "dist"
+    "dist",
+    "pre-configs"
   ],
   "publishConfig": {
     "access": "public"
