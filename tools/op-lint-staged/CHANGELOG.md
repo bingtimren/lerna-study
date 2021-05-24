@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.0...@bingsjs/op-lint-staged@0.2.1) (2021-05-24)
+
+
+### Bug Fixes
+
+* **op-lint-staged:** add opCmd.parse() to kick start processing ([6b0b088](https://github.com/bingtimren/op-tools/commit/6b0b08803056c4aa3244cdfa190fd756cec344db))
+
+
+
+
+
 # 0.2.0 (2021-05-24)
 
 
