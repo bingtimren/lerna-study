@@ -1,0 +1,5 @@
+{
+  "**/*.ts": ["op-lint fix"],
+  "**/*.js": ["op-lint fix"],
+  "**/*.json": ["op-lint fix", "prettier --write"]
+}
