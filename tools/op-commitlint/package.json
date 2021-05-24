@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-commitlint",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "Opinioned (pre-configured) commitlint",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -25,7 +25,7 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.1.0",
+    "@bingsjs/op-tools": "^0.1.1",
     "@commitlint/config-conventional": "^12.1.4",
     "@commitlint/lint": "^12.1.4",
     "@commitlint/load": "^12.1.4",

@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-jest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Opinioned jest - call jest with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -25,7 +25,7 @@
     "url": "https://github.com/bingtimren/lerna-study/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.1.0",
+    "@bingsjs/op-tools": "^0.1.1",
     "jest": "^26.6.3",
     "open-cli": "^6.0.1",
     "ts-jest": "^26.5.6"
