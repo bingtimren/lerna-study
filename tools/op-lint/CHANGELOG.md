@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.2.0) (2021-05-24)
+
+
+### Features
+
+* **op-lint:** add eslint-plugin-import to lint of js files ([4667b46](https://github.com/bingtimren/lerna-study/commit/4667b463df926dfb89e462139d92f44300786f8b))
+* **op-lint:** added import lint on typescripts ([82a6062](https://github.com/bingtimren/lerna-study/commit/82a6062792a0cec38de208918a2632b748073965))
+
+
+
+
+
 ## [0.1.2](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.1...@bingsjs/op-lint@0.1.2) (2021-05-24)
 
 
