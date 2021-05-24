@@ -1,7 +1,7 @@
 {
   "name": "@bingsjs/op-commitlint",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Opinioned (pre-configured) commitlint",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
