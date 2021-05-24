@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/lerna-ts-std-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Standard tools for a lerna typescript repo",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -25,6 +25,6 @@
     "@bingsjs/op-commitlint": "^0.2.0",
     "@bingsjs/op-jest": "^0.1.1",
     "@bingsjs/op-lint": "^0.1.1",
-    "@bingsjs/op-tsc": "^0.1.1"
+    "@bingsjs/op-tsc": "^0.1.2"
   }
 }
