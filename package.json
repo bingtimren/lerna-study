@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "husky install",
     "git:hook:pre-commit": "lint-staged -v",
-    "git:hook:prepare-commit-msg": "op-commitizen",
+    "git:hook:prepare-commit-msg": "exec < /dev/tty && op-commitizen --hook || true",
     "ci": "yarn install; yarn lerna bootstrap; yarn lerna run --stream build; yarn lerna run --stream test"
   },
   "workspaces": [
