@@ -12,7 +12,7 @@ opCmd.program
     const success = await lintStaged({
       allowEmpty: false,
       concurrent: true,
-      configPath: opCmd.getConfigFileContentParsed(),
+      configPath: opCmd.configFilePathInPackage,
       cwd: process.cwd(),
       debug: false,
       maxArgLength: null,
