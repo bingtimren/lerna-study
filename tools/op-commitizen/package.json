@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-commitizen",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Opinioned commitizen with default configuration for conventional changelog",
   "author": "Bing Ren <bingtimren@gmail.com>",
