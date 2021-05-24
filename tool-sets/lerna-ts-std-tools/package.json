@@ -1,0 +1,29 @@
+{
+  "name": "@bingsjs/lerna-ts-std-tools",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Standard tools for a lerna typescript repo",
+  "author": "Bing Ren <bingtimren@gmail.com>",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingtimren/op-tools.git"
+  },
+  "scripts": {
+    "test": "echo no test and it's ok"
+  },
+  "bugs": {
+    "url": "https://github.com/bingtimren/op-tools/issues"
+  },
+  "dependencies": {
+    "@bingsjs/op-commitizen": "^0.1.0",
+    "@bingsjs/op-commitlint": "^0.1.0",
+    "@bingsjs/op-jest": "^0.1.0",
+    "@bingsjs/op-lint": "^0.1.0",
+    "@bingsjs/op-tsc": "^0.1.0"
+  }
+}

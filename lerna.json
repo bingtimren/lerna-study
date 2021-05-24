@@ -1,5 +1,5 @@
 {
-  "packages": ["tools/*"],
+  "packages": ["tools/*", "tool-sets/*"],
   "private": true,
   "version": "independent",
   "npmClient": "yarn",
