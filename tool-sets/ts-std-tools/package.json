@@ -25,6 +25,7 @@
     "@bingsjs/op-commitlint": "^0.2.1",
     "@bingsjs/op-jest": "^0.1.2",
     "@bingsjs/op-lint": "^0.1.2",
+    "@bingsjs/op-lint-staged": "^0.2.0",
     "@bingsjs/op-tsc": "^0.1.3"
   }
 }
