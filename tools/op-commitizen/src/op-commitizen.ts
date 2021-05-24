@@ -6,7 +6,7 @@ const bootstrap = require('commitizen/dist/cli/git-cz').bootstrap; // eslint-dis
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."));
 opCmd.program
-  .command("commit")
+  .command("commit", { isDefault: true })
   .description("commit with Commitizen")
   .action(() => {
     bootstrap({
