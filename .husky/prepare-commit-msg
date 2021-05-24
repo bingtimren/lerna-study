@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn git:hook:prepare-commit-msg
+exec < /dev/tty && yarn op-commitizen hook "$1" "$2" "$3" || true
