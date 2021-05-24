@@ -55,11 +55,13 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: "module",
       },
-      plugins: ["@typescript-eslint", "prettier"],
+      plugins: ["@typescript-eslint", "import", "prettier"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
         // put prettier LAST to override other configs
         "prettier",
       ],

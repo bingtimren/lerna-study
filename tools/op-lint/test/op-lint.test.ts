@@ -11,6 +11,9 @@ describe("op-lint", () => {
         /error\s*Unexpected var\, use let or const instead/
       );
       expect(error.stdout.toString()).toMatch(
+        /error\s*Unable to resolve path to module 'somethingNotExist'\s+import\/no-unresolved/
+      );
+      expect(error.stdout.toString()).toMatch(
         /error\s*Insert \`\;\`\s*prettier\/prettier/
       );
     }
