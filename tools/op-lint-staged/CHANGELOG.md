@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.1...@bingsjs/op-lint-staged@0.2.2) (2021-05-24)
+
+
+### Bug Fixes
+
+* **op-lint-staged:** fix configPath setting - replace object with required string path ([7019df4](https://github.com/bingtimren/op-tools/commit/7019df49471e244f49ab8ec0f94bb523c71aab98))
+
+
+
+
+
 ## [0.2.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.0...@bingsjs/op-lint-staged@0.2.1) (2021-05-24)
 
 
