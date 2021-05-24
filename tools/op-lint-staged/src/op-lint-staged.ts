@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 const lintStaged = require('lint-staged'); // eslint-disable-line

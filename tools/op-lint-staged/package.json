@@ -19,7 +19,8 @@
     "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-lint-staged.js",
+    "test": "echo no test and it is ok"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
