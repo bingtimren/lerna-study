@@ -6,7 +6,7 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
   "license": "ISC",
-  "main": "lib/op-commitizen.js",
+  "bin": "dist/op-commitizen.js",
   "files": [
     "dist"
   ],
@@ -18,12 +18,15 @@
     "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-commitizen.js",
+    "test": "echo no test and it is ok"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "commitizen": "^4.2.4"
+    "@bingsjs/op-tools": "^0.1.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0"
   }
 }
