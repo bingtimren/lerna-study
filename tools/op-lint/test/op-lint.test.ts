@@ -33,6 +33,12 @@ describe("op-lint", () => {
       expect(error.stdout.toString()).toMatch(
         /error\s+Expected property shorthand\s+object-shorthand/
       );
+      expect(error.stdout.toString()).toMatch(
+        /error\s+Unable to resolve path to module.+import\/no-unresolved/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /import\/no-extraneous-dependencies/
+      );
     }
   });
   it("op-lint lints JSON", () => {

@@ -13,7 +13,8 @@ module.exports = {
     // for Javascript, use air-bnb configs & run prettier
     {
       files: ["*.js", "*.tsx"],
-      extends: ["airbnb-base", "prettier"],
+      plugins: ["import"],
+      extends: ["airbnb-base", "plugin:import/recommended", "prettier"],
       parserOptions: {
         ecmaVersion: 12,
       },
