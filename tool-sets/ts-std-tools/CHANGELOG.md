@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.2.0...@bingsjs/ts-std-tools@0.3.0) (2021-05-24)
+
+
+### Features
+
+* **ts-std-tools:** added op-ts-lint-staged ([43154d3](https://github.com/bingtimren/op-tools/commit/43154d31c51997b12fd0f295e2e2893ec72a2b43))
+
+
+
+
+
 # 0.2.0 (2021-05-24)
 
 
