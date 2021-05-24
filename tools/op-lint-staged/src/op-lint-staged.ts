@@ -27,3 +27,5 @@ opCmd.program
       process.exit(1);
     }
   });
+
+opCmd.parse(process.argv);
