@@ -55,6 +55,9 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: "module",
       },
+      settings: {
+        "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".json"],
+      },
       plugins: ["@typescript-eslint", "import", "prettier"],
       extends: [
         "eslint:recommended",
@@ -68,6 +71,7 @@ module.exports = {
       rules: {
         "prettier/prettier": "error",
         "@typescript-eslint/no-unused-vars": "error",
+        "import/no-extraneous-dependencies": "error",
       },
     },
   ],

@@ -14,6 +14,9 @@ describe("op-lint", () => {
         /error\s*Unable to resolve path to module 'somethingNotExist'\s+import\/no-unresolved/
       );
       expect(error.stdout.toString()).toMatch(
+        /error\s+'yaml' should be listed in the project's dependencies\. Run 'npm i \-S yaml' to add it\s+import\/no-extraneous-dependencies/
+      );
+      expect(error.stdout.toString()).toMatch(
         /error\s*Insert \`\;\`\s*prettier\/prettier/
       );
     }
