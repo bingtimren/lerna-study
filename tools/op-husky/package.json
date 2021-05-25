@@ -1,0 +1,35 @@
+{
+  "name": "@bingsjs/op-husky",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Pre-configured husky to install pre-configured git hooks",
+  "author": "Bing Ren <bingtimren@gmail.com>",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
+  "license": "ISC",
+  "bin": "dist/op-husky.js",
+  "files": [
+    "dist",
+    "pre-configs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingtimren/op-tools.git"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-husky.js",
+    "test": "echo there is no test and it is ok"
+  },
+  "bugs": {
+    "url": "https://github.com/bingtimren/op-tools/issues"
+  },
+  "dependencies": {
+    "@bingsjs/op-commitizen": "^0.2.1",
+    "@bingsjs/op-commitlint": "^0.2.1",
+    "@bingsjs/op-lint-staged": "^0.2.5",
+    "@bingsjs/op-tools": "^0.1.1",
+    "husky": "^6.0.0"
+  }
+}
