@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.3.0...@bingsjs/op-lint@0.3.1) (2021-05-25)
+
+
+### Bug Fixes
+
+* add check for extraneous dependency import to op-lint ([ad5a293](https://github.com/bingtimren/lerna-study/commit/ad5a293aa22f78ca2e0f827497442ef6de2b3295))
+
+
+
+
+
 # [0.3.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.3.0) (2021-05-24)
 
 
