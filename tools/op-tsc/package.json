@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-tsc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "Opinioned tsc, tsc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,12 +26,13 @@
     "url": "https://github.com/bingtimren/lerna-study/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.2.0",
+    "@bingsjs/op-tools": "^0.2.1",
     "@bingsjs/tsc-prog": "^2.3.0",
     "chalk": "^4.1.1",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.6",
     "ts-purify": "^3.0.1",
     "typescript": "^4.2.4"
-  }
+  },
+  "gitHead": "06be4c569d29d9d010e03c68a2777fd8ccbb7acd"
 }
