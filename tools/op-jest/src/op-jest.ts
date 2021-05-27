@@ -16,28 +16,40 @@ opCmd.program.option("-d, --debug", "run in debug mode");
 opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
-  .action(() => {
+  .action(async () => {
     opCmd.localCopyConfig(".op-jest.config.js");
-    const CMD =
-      `${opCmd.opts.exe} jest -c ${opCmd.configFilePathCopiedLocal} ` +
-      `${opCmd.opts.onlyChanged ? "--onlyChanged" : ""} ` +
-      `${opCmd.opts.debug ? "--runInBand " : ""}` +
-      `${opCmd.opts.watch ? "--watchAll" : ""}` +
-      `${opCmd.opts.coverage ? "--coverage" : ""}`;
+    const args: string[] = ["-c", opCmd.configFilePathCopiedLocal!];
+    if (opCmd.opts.onlyChanged) {
+      args.push("--onlyChanged");
+    }
+    if (opCmd.opts.debug) {
+      args.push("--runInBand");
+    }
+    if (opCmd.opts.watch) {
+      args.push("--watchAll");
+    }
+    if (opCmd.opts.coverage) {
+      args.push("--coverage");
+    }
     const toReport =
       opCmd.opts.coverage &&
       opCmd.opts.report &&
       (opCmd.getConfigFileContentParsed() as any).coverageDirectory;
-    const jestResult = opCmd.chalkedExecSync(CMD, false);
+    const jestResult = await opCmd.chalkedForkPackageBin(
+      "jest",
+      undefined,
+      args,
+      false
+    );
     if (toReport) {
       const rptPath = join(
         (opCmd.getConfigFileContentParsed() as any).coverageDirectory,
         "lcov-report/index.html"
       );
-      opCmd.chalkedExecSync(`yarn open-cli ${rptPath}`);
+      opCmd.chalkedForkPackageBin("open-cli", undefined, [rptPath]);
     }
-    if (jestResult?.status) {
-      process.exit(jestResult.status);
+    if (jestResult && jestResult.exitCode) {
+      process.exit(jestResult.exitCode);
     }
   });
 opCmd.parse(process.argv);
