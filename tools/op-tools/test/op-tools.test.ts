@@ -165,5 +165,52 @@ describe.each(testTable)(
       opCmd.chalkedExecSync("not-a-command-absolutely");
       expect(mockedExit.mock.calls[0][0]).toBeGreaterThan(0);
     });
+    it(`chalkFork runs a normal exiting script should return nothing`, async () => {
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["NORMAL"]
+      );
+      expect(exitResult).toBeUndefined();
+    });
+    it(`chalkFork runs a non-zero exiting script should return the child process`, async () => {
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["NONZERO"],
+        false
+      );
+      expect(exitResult && exitResult.exitCode === 1).toEqual(true);
+    });
+    it(`chalkFork runs an interrupted script should return the child process`, async () => {
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["KILL"],
+        false
+      );
+      expect(exitResult && exitResult.signalCode === "SIGTERM").toEqual(true);
+    });
+    it(`chalkFork runs a normal exiting script should return nothing, verbose`, async () => {
+      opCmd.parse(["node", "op-tools.js", "-v", "list"]);
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["NORMAL"]
+      );
+      expect(exitResult).toBeUndefined();
+    });
+    it(`chalkFork runs a non-zero exiting script should exit`, async () => {
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["NONZERO"],
+        true
+      );
+      expect(mockedExit).toHaveBeenLastCalledWith(1);
+    });
+    it(`chalkFork runs an interrupted script should exit`, async () => {
+      const exitResult = await opCmd.chalkedFork(
+        join(__dirname, "forkTest.js"),
+        ["KILL"],
+        true
+      );
+      expect(mockedExit).toHaveBeenLastCalledWith(1);
+    });
   }
 );

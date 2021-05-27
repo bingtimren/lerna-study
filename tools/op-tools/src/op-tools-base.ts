@@ -8,6 +8,7 @@ import * as path from "path";
 import * as chalk from "chalk";
 import * as childProcess from "child_process";
 import { parse as jsoncParse } from "jsonc-parser";
+import { promiseExit } from "child-process-toolbox";
 
 /**
  * Options for initiating an OpinionedCommand instance
@@ -206,6 +207,7 @@ export class OpinionedCommand {
   /**
    * executes command, if verbose option is on, outputs commands first
    * catches error if execution failed, and returns the error object, error.status may contain the exit code of the command
+   * otherwise returns nothing
    * @param CMD
    * @returns error object if execution fails, or nothing
    */
@@ -224,6 +226,51 @@ export class OpinionedCommand {
         process.exit(err.status);
       } else {
         return err as childProcess.SpawnSyncReturns<Buffer>;
+      }
+    }
+  }
+  /**
+   * execute child_process.fork, wait until exit, and output to std err if child process exit code is not 0
+   */
+  /**
+   * execute child_process.fork (https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options) with
+   * modulePath and optional arguments, and wait until child process exits.
+   *
+   * @param modulePath
+   * @param args - optional arguments to give to child process
+   * @param exitOnError - default true, if there is error, exit with non-zero code
+   * @returns nothing, if child process exists normally with code 0, otherwise exit the process with child exit code (exitOnError:true) or return the child process (exitOnError:false)
+   */
+  public async chalkedFork(
+    modulePath: string,
+    args?: string[],
+    exitOnError = true
+  ) {
+    if (this.opts.verbose) {
+      console.log(
+        chalk.cyanBright(`Forking : ${modulePath} (arguments: ${args})`)
+      );
+    }
+    const child = childProcess.fork(modulePath, args, {
+      stdio: "inherit",
+    });
+    const exitResult = await promiseExit(child);
+    const error =
+      exitResult[1] !== null
+        ? new Error(
+            `ERROR: forked process ${modulePath} terminated by signal ${exitResult[1]}`
+          )
+        : exitResult[0] === 0
+        ? undefined
+        : new Error(
+            `ERROR: forked process ${modulePath} (arguments:${args}) exited with code ${exitResult[0]}`
+          );
+    if (error) {
+      console.error(chalk.redBright(error.message));
+      if (exitOnError) {
+        process.exit(exitResult[0] !== null ? exitResult[0] : 1);
+      } else {
+        return child;
       }
     }
   }
