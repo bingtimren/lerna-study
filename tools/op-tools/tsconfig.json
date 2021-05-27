@@ -2,6 +2,7 @@
   // for VSCODE type-checking only, not for build
   "compilerOptions": {
     /* Basic Options */
+    "target": "ES5",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true /* Enable all strict type-checking options. */
