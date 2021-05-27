@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.3.1...@bingsjs/op-lint@0.4.0) (2021-05-27)
+
+
+### Features
+
+* **op-tools:** added chalkedForkPackageBin ([d21a67b](https://github.com/bingtimren/lerna-study/commit/d21a67bef1c22c8d97e9fce161f0c68e26b89878))
+
+
+
+
+
 ## [0.3.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.3.0...@bingsjs/op-lint@0.3.1) (2021-05-25)
 
 
