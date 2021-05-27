@@ -276,6 +276,15 @@ export class OpinionedCommand {
     }
   }
 
+  /**
+   * First resolves the full path to the bin file of the given package by packageName and optional executable name, by inspecting
+   * the "bin" field in the package's package.json, then invokes chalkedFork with the resolved path
+   * @param packageName
+   * @param executable
+   * @param args
+   * @param exitOnError
+   * @returns
+   */
   public async chalkedForkPackageBin(
     packageName: string,
     executable?: string,
