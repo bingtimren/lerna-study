@@ -3,11 +3,12 @@ import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 
 function lintFix(opCmd: OpinionedCommand, fix: boolean, globs: string[]): void {
-  const joinedGlobs = globs.map((g) => `"${g}"`).join(" ");
-  const CMD = `${opCmd.opts.exe} eslint --no-error-on-unmatched-pattern -c ${
-    opCmd.configFilePath
-  } ${fix ? "--fix" : ""} ${joinedGlobs}`;
-  opCmd.chalkedExecSync(CMD);
+  const argv = ["--no-error-on-unmatched-pattern", "-c", opCmd.configFilePath];
+  if (fix) {
+    argv.push("--fix");
+  }
+  argv.push(...globs);
+  opCmd.chalkedFork("eslint", argv, true);
 }
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {

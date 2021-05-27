@@ -9,6 +9,7 @@ import * as chalk from "chalk";
 import * as childProcess from "child_process";
 import { parse as jsoncParse } from "jsonc-parser";
 import { promiseExit } from "child-process-toolbox";
+import { sync as syncResolveBin } from "resolve-bin";
 
 /**
  * Options for initiating an OpinionedCommand instance
@@ -245,7 +246,7 @@ export class OpinionedCommand {
     modulePath: string,
     args?: string[],
     exitOnError = true
-  ) {
+  ): Promise<childProcess.ChildProcess | undefined> {
     if (this.opts.verbose) {
       console.log(
         chalk.cyanBright(`Forking : ${modulePath} (arguments: ${args})`)
@@ -273,5 +274,18 @@ export class OpinionedCommand {
         return child;
       }
     }
+  }
+
+  public async chalkedForkPackageBin(
+    packageName: string,
+    executable?: string,
+    args?: string[],
+    exitOnError = true
+  ): Promise<childProcess.ChildProcess | undefined> {
+    const modulePath = syncResolveBin(
+      packageName,
+      executable ? { executable } : undefined
+    );
+    return this.chalkedFork(modulePath, args, exitOnError);
   }
 }

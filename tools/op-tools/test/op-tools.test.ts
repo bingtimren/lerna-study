@@ -212,5 +212,28 @@ describe.each(testTable)(
       );
       expect(mockedExit).toHaveBeenLastCalledWith(1);
     });
+    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
+      const exitResult = await opCmd.chalkedForkPackageBin(
+        "jest",
+        undefined,
+        ["--version"],
+        true
+      );
+      expect(exitResult).toBeUndefined();
+    });
+    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
+      const exitResult = await opCmd.chalkedForkPackageBin("jest", "jest", [
+        "--version",
+      ]);
+      expect(exitResult).toBeUndefined();
+    });
+    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
+      const exitResult = await opCmd.chalkedForkPackageBin(
+        "jest",
+        undefined,
+        ["--version"],
+        false
+      );
+    });
   }
 );
