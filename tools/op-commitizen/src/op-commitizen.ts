@@ -15,15 +15,20 @@ opCmd.program
     });
   });
 opCmd.program
-  .command("hook <p1> <p2> <p3>")
-  .description("run as git prepare-commit-msg hook")
-  .action((p1: string, p2: string, p3: string) => {
+  .command("hook <messageFileName> <sourceOfMessage> [p3]") // see https://git-scm.com/docs/githooks#_prepare_commit_msg
+  .description(
+    "run as git prepare-commit-msg hook, see https://git-scm.com/docs/githooks#_prepare_commit_msg"
+  )
+  .action((messageFileName: string, sourceOfMessage: string, p3: string) => {
+    console.log(
+      `COMMITIZEN AS HOOK: !!${messageFileName}!! !!${sourceOfMessage}!! !!${p3}!!`
+    );
     bootstrap(
       {
         cliPath: dirname(require.resolve("commitizen/package.json")),
         config: opCmd.getConfigFileContentParsed(),
       },
-      ["git", "cz", "--hook", p1, p2, p3]
+      ["git", "cz", "--hook", messageFileName, sourceOfMessage, p3]
     );
   });
 
