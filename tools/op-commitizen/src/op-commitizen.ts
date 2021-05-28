@@ -15,14 +15,11 @@ opCmd.program
     });
   });
 opCmd.program
-  .command("hook <messageFileName> <sourceOfMessage> [p3]") // see https://git-scm.com/docs/githooks#_prepare_commit_msg
+  .command("hook <messageFileName> [sourceOfMessage] [p3]") // see https://git-scm.com/docs/githooks#_prepare_commit_msg
   .description(
     "run as git prepare-commit-msg hook, see https://git-scm.com/docs/githooks#_prepare_commit_msg"
   )
   .action((messageFileName: string, sourceOfMessage: string, p3: string) => {
-    console.log(
-      `COMMITIZEN AS HOOK: !!${messageFileName}!! !!${sourceOfMessage}!! !!${p3}!!!`
-    );
     // if a message is provided with -m, skip commitizen, as git commit may be invoked in a script
     if (sourceOfMessage === "message") {
       process.exit(0);
