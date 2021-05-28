@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.3...@bingsjs/op-husky@0.2.4) (2021-05-28)
+
+
+### Bug Fixes
+
+* **op-husky:** fix commit-msg hook to provide parameter to op-commiit-lint ([13ed1c0](https://github.com/bingtimren/op-tools/commit/13ed1c06f0ac019d57daab561ffdaf094da1e358))
+
+
+
+
+
 ## [0.2.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.2...@bingsjs/op-husky@0.2.3) (2021-05-28)
 
 
