@@ -9,7 +9,8 @@ import * as chalk from "chalk";
 import * as childProcess from "child_process";
 import { parse as jsoncParse } from "jsonc-parser";
 import { promiseExit } from "child-process-toolbox";
-import { sync as syncResolveBin } from "resolve-bin";
+
+const rbin = require("@bingsjs/resolve-bin"); // eslint-disable-line @typescript-eslint/no-var-requires
 
 /**
  * Options for initiating an OpinionedCommand instance
@@ -291,7 +292,7 @@ export class OpinionedCommand {
     args?: string[],
     exitOnError = true
   ): Promise<childProcess.ChildProcess | undefined> {
-    const modulePath = syncResolveBin(
+    const modulePath = rbin.sync(
       packageName,
       executable ? { executable } : undefined
     );

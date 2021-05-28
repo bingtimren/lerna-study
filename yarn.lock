@@ -294,6 +294,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bingsjs/resolve-bin@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@bingsjs/resolve-bin/-/resolve-bin-0.4.0.tgz#cf39f115b941a57e8633e643712cade34ec448c0"
+  integrity sha512-l/9RjMVlxIIsL3eSPyECpo0JgnHnOEaO6Ftk7VIvKAZE0c56zEjJmILCjn8gCkseFx95cOzgBjpMndKWIsJ3xw==
+  dependencies:
+    find-parent-dir "~0.3.0"
+
 "@bingsjs/tsc-prog@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@bingsjs/tsc-prog/-/tsc-prog-2.3.0.tgz#aa725b7e6c0503c72197d71fa9fd7bccb53fe283"
@@ -6932,13 +6939,6 @@ require-main-filename@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
-
-resolve-bin@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/resolve-bin/-/resolve-bin-0.4.0.tgz#47132249891101afb19991fe937cb0a5f072e5d9"
-  integrity sha1-RxMiSYkRAa+xmZH+k3ywpfBy5dk=
-  dependencies:
-    find-parent-dir "~0.3.0"
 
 resolve-cwd@^3.0.0:
   version "3.0.0"

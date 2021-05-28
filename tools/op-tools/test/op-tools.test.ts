@@ -227,9 +227,9 @@ describe.each(testTable)(
       ]);
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
+    it(`chalkedForkPackageBin runs a normal exiting script should return nothing (use open-cli to test resolve-bin)`, async () => {
       const exitResult = await opCmd.chalkedForkPackageBin(
-        "jest",
+        "open-cli",
         undefined,
         ["--version"],
         false
