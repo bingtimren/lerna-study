@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitizen@0.3.0...@bingsjs/op-commitizen@0.3.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* **op-commitizen:** if source of commit message is 'message', skip commitizen ([5049394](https://github.com/bingtimren/op-tools/commit/5049394918b7ee1b81b09ec44dda4b65f8a06498))
+* **op-commitizen:** if source of message is 'message', skip commitizen ([a908048](https://github.com/bingtimren/op-tools/commit/a908048184e79b68406797bd1f9feb7f59a07959))
+
+
+
+
+
 # [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitizen@0.2.3...@bingsjs/op-commitizen@0.3.0) (2021-05-28)
 
 
