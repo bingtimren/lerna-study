@@ -23,6 +23,10 @@ opCmd.program
     console.log(
       `COMMITIZEN AS HOOK: !!${messageFileName}!! !!${sourceOfMessage}!! !!${p3}!!!`
     );
+    // if a message is provided with -m, skip commitizen, as git commit may be invoked in a script
+    if (sourceOfMessage === "message") {
+      process.exit(0);
+    }
     bootstrap(
       {
         cliPath: dirname(require.resolve("commitizen/package.json")),
