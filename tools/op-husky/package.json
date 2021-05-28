@@ -20,8 +20,7 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-husky.js",
-    "test": "echo there is no test and it is ok",
-    "postinstall": "dist/op-husky.js install"
+    "test": "echo there is no test and it is ok"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
