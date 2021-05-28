@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.2...@bingsjs/op-husky@0.2.3) (2021-05-28)
+
+
+### Bug Fixes
+
+* **op-husky:** added config files, removed postinstall script ([cedcc00](https://github.com/bingtimren/op-tools/commit/cedcc00ad27d3682a32b71527a5aee76a58bfb7f))
+
+
+
+
+
 ## [0.2.2](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.1...@bingsjs/op-husky@0.2.2) (2021-05-28)
 
 
