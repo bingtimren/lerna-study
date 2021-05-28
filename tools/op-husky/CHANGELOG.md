@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.4...@bingsjs/op-husky@0.2.5) (2021-05-28)
+
+
+### Bug Fixes
+
+* **op-husky:** add 'await' so commands are executed sequentially ([acc52e8](https://github.com/bingtimren/op-tools/commit/acc52e815a41c283d6c8481a1112b38e14e56cc8))
+
+
+
+
+
 ## [0.2.4](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.3...@bingsjs/op-husky@0.2.4) (2021-05-28)
 
 
