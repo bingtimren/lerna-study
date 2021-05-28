@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitizen@0.2.3...@bingsjs/op-commitizen@0.3.0) (2021-05-28)
+
+
+### Features
+
+* **op-commitizen:** added an output (temp) to see parameters provided by hook ([dc90804](https://github.com/bingtimren/op-tools/commit/dc90804d59682d6539cea0a4ae00ec1ec9b417b5))
+
+
+
+
+
 ## [0.2.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitizen@0.2.2...@bingsjs/op-commitizen@0.2.3) (2021-05-27)
 
 **Note:** Version bump only for package @bingsjs/op-commitizen
