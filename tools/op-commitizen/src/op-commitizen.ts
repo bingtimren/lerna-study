@@ -21,7 +21,7 @@ opCmd.program
   )
   .action((messageFileName: string, sourceOfMessage: string, p3: string) => {
     console.log(
-      `COMMITIZEN AS HOOK: !!${messageFileName}!! !!${sourceOfMessage}!! !!${p3}!!`
+      `COMMITIZEN AS HOOK: !!${messageFileName}!! !!${sourceOfMessage}!! !!${p3}!!!`
     );
     bootstrap(
       {
