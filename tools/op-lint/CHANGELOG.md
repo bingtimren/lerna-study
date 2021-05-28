@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.4.1...@bingsjs/op-lint@0.4.2) (2021-05-28)
+
+**Note:** Version bump only for package @bingsjs/op-lint
+
+
+
+
+
 ## [0.4.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.4.0...@bingsjs/op-lint@0.4.1) (2021-05-27)
 
 **Note:** Version bump only for package @bingsjs/op-lint

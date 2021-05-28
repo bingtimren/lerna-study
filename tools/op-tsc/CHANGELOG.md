@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-tsc@0.1.5...@bingsjs/op-tsc@0.1.6) (2021-05-28)
+
+**Note:** Version bump only for package @bingsjs/op-tsc
+
+
+
+
+
 ## [0.1.5](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-tsc@0.1.4...@bingsjs/op-tsc@0.1.5) (2021-05-27)
 
 **Note:** Version bump only for package @bingsjs/op-tsc

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-tools@0.2.1...@bingsjs/op-tools@0.2.2) (2021-05-28)
+
+
+### Bug Fixes
+
+* **op-tools:** replace resolve-bin with @bingsjs/resolve-bin with issue [#7](https://github.com/bingtimren/lerna-study/issues/7) fixed ([1bf3b25](https://github.com/bingtimren/lerna-study/commit/1bf3b254889b24985547095bb30b82ac6824e913))
+
+
+
+
+
 ## [0.2.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-tools@0.2.0...@bingsjs/op-tools@0.2.1) (2021-05-27)
 
 **Note:** Version bump only for package @bingsjs/op-tools
