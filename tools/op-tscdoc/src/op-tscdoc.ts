@@ -14,7 +14,7 @@ opCmd.program
   .command("build", { isDefault: true })
   .description("run tsc --build")
   .action(async () => {
-    const config = opCmd.getConfigFileContentParsed() as any;
+    const config = opCmd.getConfigFileContentParsed() as any; // eslint-disable-line @typescript-eslint/no-explicit-any
     // first do purify
     try {
       if (config?.compilerOptions?.rootDir && config?.compilerOptions?.outDir) {

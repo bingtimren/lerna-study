@@ -26,7 +26,7 @@
     "@bingsjs/op-jest": "^0.1.5",
     "@bingsjs/op-lint": "^0.4.2",
     "@bingsjs/op-lint-staged": "^0.2.8",
-    "@bingsjs/op-tsc": "^0.1.6"
+    "@bingsjs/op-tscdoc": "^0.1.6"
   },
   "gitHead": "06be4c569d29d9d010e03c68a2777fd8ccbb7acd"
 }

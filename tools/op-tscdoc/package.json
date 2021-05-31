@@ -1,12 +1,12 @@
 {
-  "name": "@bingsjs/op-tsc",
+  "name": "@bingsjs/op-tscdoc",
   "version": "0.1.6",
   "private": false,
-  "description": "Opinioned tsc, tsc with pre-configurations",
+  "description": "Opinioned tsc & typedoc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/lerna-study#readme",
   "license": "ISC",
-  "bin": "dist/op-tsc.js",
+  "bin": "dist/op-tscdoc.js",
   "files": [
     "dist",
     "pre-configs"
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/bingtimren/lerna-study.git"
   },
   "scripts": {
-    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-tsc.js",
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-tscdoc.js",
     "test": "jest"
   },
   "bugs": {
