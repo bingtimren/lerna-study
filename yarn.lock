@@ -301,11 +301,6 @@
   dependencies:
     find-parent-dir "~0.3.0"
 
-"@bingsjs/tsc-prog@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@bingsjs/tsc-prog/-/tsc-prog-2.3.0.tgz#aa725b7e6c0503c72197d71fa9fd7bccb53fe283"
-  integrity sha512-mYEayWqvbO2Uk45MKdHzHHMEr2Ly3Tw34njDLb3VdrGO5/4Gap6Me2jETfqRMX/O4M5Y+NH6XZXESgbXVKPkmA==
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
