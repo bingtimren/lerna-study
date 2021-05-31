@@ -46,4 +46,21 @@ opCmd.program
       true
     );
   });
+
+opCmd.program
+  .command("doc")
+  .description("build document with typedoc")
+  .action(async () => {
+    opCmd.localCopyConfig("op-tscdoc.tsconfig.json");
+
+    // do typedoc --tsconfig
+
+    opCmd.chalkedForkPackageBin(
+      "typedoc",
+      undefined,
+      ["--tsconfig", opCmd.configFilePathCopiedLocal!],
+      true
+    );
+  });
+
 opCmd.parse(process.argv);

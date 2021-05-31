@@ -29,6 +29,7 @@
     "@bingsjs/op-tools": "^0.2.2",
     "chalk": "^4.1.1",
     "ts-purify": "^3.0.1",
+    "typedoc": "^0.20.36",
     "typescript": "^4.2.4"
   },
   "devDependencies": {

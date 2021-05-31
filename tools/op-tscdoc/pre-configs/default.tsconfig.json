@@ -14,6 +14,14 @@
     "strict": true /* Enable all strict type-checking options. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
+  "typedocOptions": {
+    "entryPoints": "src",
+    "excludePrivate": true,
+    "excludeExternals": true,
+    "out": "docs/api",
+    "json": "docs/api/typedoc.json",
+    "name": "API Document"
+  },
   "include": ["../src/**/*.ts", "../src/**/*.tsx"],
   "exclude": ["../src/**/*.test.ts", "../src/**/*.spec.ts", "test/**"]
 }
