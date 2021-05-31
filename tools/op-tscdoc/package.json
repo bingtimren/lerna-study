@@ -4,7 +4,7 @@
   "private": false,
   "description": "Opinioned tsc & typedoc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
-  "homepage": "https://github.com/bingtimren/lerna-study#readme",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
   "license": "ISC",
   "bin": "dist/op-tscdoc.js",
   "files": [
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bingtimren/lerna-study.git"
+    "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "scripts": {
     "build": "tsc --build tsconfig-build.json; chmod 755 dist/op-tscdoc.js",
     "test": "jest"
   },
   "bugs": {
-    "url": "https://github.com/bingtimren/lerna-study/issues"
+    "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
     "@bingsjs/op-tools": "^0.2.2",

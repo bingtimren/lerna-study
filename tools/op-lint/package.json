@@ -3,7 +3,7 @@
   "version": "0.4.2",
   "description": "Opinionated eslint configured to lint typescript and others",
   "author": "Bing Ren <bingtimren@gmail.com>",
-  "homepage": "https://github.com/bingtimren/lerna-study#readme",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
   "license": "ISC",
   "bin": "dist/op-lint.js",
   "type": "commonjs",
@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bingtimren/lerna-study.git"
+    "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/bingtimren/lerna-study/issues"
+    "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
     "@bingsjs/op-tools": "^0.2.2",

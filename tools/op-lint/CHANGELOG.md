@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.4.2](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.4.1...@bingsjs/op-lint@0.4.2) (2021-05-28)
+## [0.4.2](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.4.1...@bingsjs/op-lint@0.4.2) (2021-05-28)
 
 **Note:** Version bump only for package @bingsjs/op-lint
 
@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.4.0...@bingsjs/op-lint@0.4.1) (2021-05-27)
+## [0.4.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.4.0...@bingsjs/op-lint@0.4.1) (2021-05-27)
 
 **Note:** Version bump only for package @bingsjs/op-lint
 
@@ -19,58 +19,58 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.4.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.3.1...@bingsjs/op-lint@0.4.0) (2021-05-27)
+# [0.4.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.3.1...@bingsjs/op-lint@0.4.0) (2021-05-27)
 
 
 ### Features
 
-* **op-tools:** added chalkedForkPackageBin ([d21a67b](https://github.com/bingtimren/lerna-study/commit/d21a67bef1c22c8d97e9fce161f0c68e26b89878))
+* **op-tools:** added chalkedForkPackageBin ([d21a67b](https://github.com/bingtimren/op-tools/commit/d21a67bef1c22c8d97e9fce161f0c68e26b89878))
 
 
 
 
 
-## [0.3.1](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.3.0...@bingsjs/op-lint@0.3.1) (2021-05-25)
+## [0.3.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.3.0...@bingsjs/op-lint@0.3.1) (2021-05-25)
 
 
 ### Bug Fixes
 
-* add check for extraneous dependency import to op-lint ([ad5a293](https://github.com/bingtimren/lerna-study/commit/ad5a293aa22f78ca2e0f827497442ef6de2b3295))
+* add check for extraneous dependency import to op-lint ([ad5a293](https://github.com/bingtimren/op-tools/commit/ad5a293aa22f78ca2e0f827497442ef6de2b3295))
 
 
 
 
 
-# [0.3.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.3.0) (2021-05-24)
-
-
-### Features
-
-* **op-lint:** add eslint-plugin-import to lint of js files ([4667b46](https://github.com/bingtimren/lerna-study/commit/4667b463df926dfb89e462139d92f44300786f8b))
-* **op-lint:** added import lint on typescripts ([82a6062](https://github.com/bingtimren/lerna-study/commit/82a6062792a0cec38de208918a2632b748073965))
-
-
-
-
-
-# [0.2.0](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.2.0) (2021-05-24)
+# [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.3.0) (2021-05-24)
 
 
 ### Features
 
-* **op-lint:** add eslint-plugin-import to lint of js files ([4667b46](https://github.com/bingtimren/lerna-study/commit/4667b463df926dfb89e462139d92f44300786f8b))
-* **op-lint:** added import lint on typescripts ([82a6062](https://github.com/bingtimren/lerna-study/commit/82a6062792a0cec38de208918a2632b748073965))
+* **op-lint:** add eslint-plugin-import to lint of js files ([4667b46](https://github.com/bingtimren/op-tools/commit/4667b463df926dfb89e462139d92f44300786f8b))
+* **op-lint:** added import lint on typescripts ([82a6062](https://github.com/bingtimren/op-tools/commit/82a6062792a0cec38de208918a2632b748073965))
 
 
 
 
 
-## [0.1.2](https://github.com/bingtimren/lerna-study/compare/@bingsjs/op-lint@0.1.1...@bingsjs/op-lint@0.1.2) (2021-05-24)
+# [0.2.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.1.2...@bingsjs/op-lint@0.2.0) (2021-05-24)
+
+
+### Features
+
+* **op-lint:** add eslint-plugin-import to lint of js files ([4667b46](https://github.com/bingtimren/op-tools/commit/4667b463df926dfb89e462139d92f44300786f8b))
+* **op-lint:** added import lint on typescripts ([82a6062](https://github.com/bingtimren/op-tools/commit/82a6062792a0cec38de208918a2632b748073965))
+
+
+
+
+
+## [0.1.2](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.1.1...@bingsjs/op-lint@0.1.2) (2021-05-24)
 
 
 ### Bug Fixes
 
-* add pre-configs dir to package.json files ([2e18d2f](https://github.com/bingtimren/lerna-study/commit/2e18d2ffe03dd258249da4d40b125eb1ef56adac))
+* add pre-configs dir to package.json files ([2e18d2f](https://github.com/bingtimren/op-tools/commit/2e18d2ffe03dd258249da4d40b125eb1ef56adac))
 
 
 
@@ -81,4 +81,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* build and tests ([82199f8](https://github.com/bingtimren/lerna-study/commit/82199f8d3d7ad477e1cfe3f3e3e35bfb973e1e68))
+* build and tests ([82199f8](https://github.com/bingtimren/op-tools/commit/82199f8d3d7ad477e1cfe3f3e3e35bfb973e1e68))
