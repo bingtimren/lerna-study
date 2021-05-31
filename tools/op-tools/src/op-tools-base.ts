@@ -152,10 +152,11 @@ export class OpinionedCommand {
    * @returns the content of the configuration file, parsed to javascript object according to suffix (.json, .jsonc, .js)
    */
   public getConfigFileContentParsed(): unknown {
-    if (this.configFilePath.endsWith(".jsonc")) {
+    if (
+      this.configFilePath.endsWith(".jsonc") ||
+      this.configFilePath.endsWith(".json")
+    ) {
       return jsoncParse(this.getConfigFileContent().toString());
-    } else if (this.configFilePath.endsWith(".json")) {
-      return JSON.parse(this.getConfigFileContent().toString());
     } else if (this.configFilePath.endsWith(".js")) {
       const absPath = path.isAbsolute(this.configFilePath)
         ? this.configFilePath
