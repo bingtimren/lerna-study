@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "@bingsjs/op-tools": "^0.2.2",
-    "@bingsjs/resolve-bin": "^0.4.1",
     "dependency-cruiser": "^10.0.1",
+    "graphviz-cli": "^1.0.0",
     "open-cli": "^6.0.1"
   },
   "devDependencies": {

@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@aduh95/viz.js@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@aduh95/viz.js/-/viz.js-3.0.1.tgz#934768095b2ebc7d1720221a376a40b5d8977b39"
+  integrity sha512-YSvrWyjxazfSLoGzVO7HtIPYVMsUd/vA+b6lVTF35oDp/38dtdIubrdhRaUFoeKXLutms5OkhuPT6GjjA3X9zg==
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -294,7 +299,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bingsjs/resolve-bin@^0.4.0", "@bingsjs/resolve-bin@^0.4.1":
+"@bingsjs/resolve-bin@^0.4.0":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@bingsjs/resolve-bin/-/resolve-bin-0.4.1.tgz#daea9b6b0f8f97d86a27d6508eafb23d541193ea"
   integrity sha512-VjTt2vTHYxJyMxxrtjRParX/KRn3djxqX3AD3hX2vtfosZq0IxtY9hNV/Hsh6LirmQrfqoekKCVL+9SATtbW3w==
@@ -4015,6 +4020,13 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
+
+graphviz-cli@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/graphviz-cli/-/graphviz-cli-1.0.0.tgz#9a487ddce36b8f31a2cb27ad944f2126cb1b5d5d"
+  integrity sha512-aPv1r4kP7I5cVGu73WjVc/h5OdebB0z+acWiN+0YFnSRK2UQlWudp/xlqXCQdn/b5caw0GSxLysZS60K5pqRJw==
+  dependencies:
+    "@aduh95/viz.js" "3.0.1"
 
 growly@^1.3.0:
   version "1.3.0"
