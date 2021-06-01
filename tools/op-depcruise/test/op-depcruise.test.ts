@@ -19,10 +19,8 @@ describe("op-depcruise", () => {
     execSync("../dist/op-depcruise.js");
     expect(statSync("docs").isDirectory()).toEqual(true);
     expect(statSync("docs/api/dependency-graph.svg").isFile()).toEqual(true);
-    expect(
-      readFileSync("docs/api/dependency-graph.svg")!
-        .toString()
-        .startsWith("<?xml version=")
-    ).toEqual(true);
+    const content = readFileSync("docs/api/dependency-graph.svg")!.toString();
+    expect(content.startsWith("<?xml version=")).toEqual(true);
+    expect(content.includes("good.ts")).toEqual(true);
   });
 });

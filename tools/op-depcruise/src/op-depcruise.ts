@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
 import { OpinionedCommand } from "@bingsjs/op-tools";
-import { join } from "path";
+import { join, dirname } from "path";
 import { mkdirSync } from "fs";
 import { cruise, IReporterOutput, ICruiseOptions } from "dependency-cruiser";
 import { renderGraphFromSource } from "graphviz-cli";
-
-const OUTPUT_FILENAME = "dependency-graph.svg";
-const OUTPUT_DIR = "docs/api";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
   configFileSuffix: ".js",
@@ -19,7 +16,8 @@ opCmd.program
     "(default command) build dependency graph with dependency-cruiser"
   )
   .option("-o, --open", "open the generated graph")
-  .action(async (options: { open?: boolean }) => {
+  .option("-s, --save <path>", "save to path", "docs/api/dependency-graph.svg")
+  .action(async (options: { open?: boolean; save: string }) => {
     // config
     const cruiseOptions: ICruiseOptions =
       opCmd.getConfigFileContentParsed() as ICruiseOptions;
@@ -29,10 +27,10 @@ opCmd.program
     const cruiseResult: IReporterOutput = cruise(["."], cruiseOptions);
 
     // output svg
-    const outFilePath = join(OUTPUT_DIR, OUTPUT_FILENAME);
-
+    const outFilePath = options.save;
+    console.log(options);
     // generate svg
-    mkdirSync(OUTPUT_DIR, { recursive: true });
+    mkdirSync(dirname(outFilePath), { recursive: true });
     await renderGraphFromSource(
       { input: cruiseResult.output as string },
       {
