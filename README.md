@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/bingtimren/op-tools/actions/workflows/build-test.yml/badge.svg)](https://github.com/bingtimren/op-tools/actions/workflows/build-test.yml)
+
 # Lerna Study Repo
 
 Purpose of this project:
