@@ -215,13 +215,13 @@ export class OpinionedCommand {
    * @returns
    *     Promise, that resolves to nothing, if child process exists normally with code 0,
    *         or exits the process with child exit code (exitOnError:true) without resolve/reject,
-   *         or rejects with the error object
+   *         or returns with the error object
    */
-  public async chalkedExeca(
+  public chalkedExecaSync(
     file: string,
     args?: readonly string[] | undefined,
     exitOnError = true
-  ): Promise<void> {
+  ): void | execa.ExecaSyncError {
     if (this.opts.verbose) {
       /* istanbul ignore next */
       console.log(
@@ -229,18 +229,19 @@ export class OpinionedCommand {
           ""
       );
     }
-    const proc = execa(file, args, { preferLocal: true });
-    proc.stdout!.pipe(process.stdout);
-    proc.stderr!.pipe(process.stderr);
     try {
-      await proc;
+      execa.sync(file, args, { preferLocal: true, stdio: "inherit" });
       return;
-    } catch (err) {
+    } catch (error) {
+      const syncError: execa.ExecaSyncError = error;
       if (exitOnError) {
-        /* istanbul ignore next */
-        process.exit(proc.exitCode && proc.exitCode !== 0 ? proc.exitCode : 1);
+        process.exit(
+          typeof syncError.exitCode === "number" && syncError.exitCode !== 0
+            ? syncError.exitCode
+            : 1
+        );
       } else {
-        throw err;
+        return syncError;
       }
     }
   }

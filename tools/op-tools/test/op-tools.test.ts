@@ -136,25 +136,21 @@ describe.each(testTable)(
         opCmd.localCopyConfig("file" + suffix, "package.json");
       }).toThrowError(/is not a directory/);
     });
-    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli for testing)`, async () => {
-      const exitResult = await opCmd.chalkedExeca(
+    it(`chalkedExecaSync runs a normal exiting script should return nothing (uses open-cli for testing)`, async () => {
+      const exitResult = opCmd.chalkedExecaSync(
         "open-cli",
         ["--version"],
         true
       );
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedExeca runs a normal exiting script should return nothing (depcruise for testing)`, async () => {
-      const exitResult = await opCmd.chalkedExeca(
-        "depcruise",
-        ["--help"],
-        true
-      );
+    it(`chalkedExecaSync runs a normal exiting script should return nothing (depcruise for testing)`, async () => {
+      const exitResult = opCmd.chalkedExecaSync("depcruise", ["--help"], true);
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedExeca runs a normal exiting script should return nothing (using defaults and -v)`, async () => {
+    it(`chalkedExecaSync runs a normal exiting script should return nothing (using defaults and -v)`, async () => {
       opCmd.parse(["node", "op-tools.js", "-v", "list"]);
-      const exitResult = await opCmd.chalkedExeca("ls");
+      const exitResult = opCmd.chalkedExecaSync("ls");
       expect(exitResult).toBeUndefined();
       const content = mockedLog.mock.calls
         .map((msgs) => msgs.join("/"))
@@ -163,9 +159,9 @@ describe.each(testTable)(
         0
       );
     });
-    it(`chalkedExeca runs a normal exiting script should return nothing (using defaults and -v)`, async () => {
+    it(`chalkedExecaSync runs a normal exiting script should return nothing (with args and -v)`, async () => {
       opCmd.parse(["node", "op-tools.js", "-v", "list"]);
-      const exitResult = await opCmd.chalkedExeca("ls", [".", "-d"]);
+      const exitResult = opCmd.chalkedExecaSync("ls", [".", "-d"]);
       expect(exitResult).toBeUndefined();
       const content = mockedLog.mock.calls
         .map((msgs) => msgs.join("/"))
@@ -173,23 +169,19 @@ describe.each(testTable)(
       expect(content.match(/ls\s+\.\s+-d/)?.length).toBeGreaterThan(0);
     });
 
-    it(`chalkedExeca runs an abnormal exiting script should exit (ls nonexist)`, async () => {
-      const exitResult = await opCmd.chalkedExeca(
-        "ls",
-        ["nonexist-file"],
-        true
-      );
-      expect(mockedExit).toHaveBeenCalledWith(2);
+    it(`chalkedExecaSync runs an abnormal exiting script should exit (ls nonexist)`, async () => {
+      const exitResult = opCmd.chalkedExecaSync("sh", ["-c", "exit 123"], true);
+      expect(mockedExit).toHaveBeenCalledWith(123);
     });
-    it(`chalkedExeca runs an abnormal exiting script should exit (nonexist)`, async () => {
-      const exitResult = await opCmd.chalkedExeca("sdqefqweqweqwedqwedqwe");
-      expect(mockedExit).toHaveBeenCalledWith(-2);
+    it(`chalkedExecaSync runs an abnormal exiting script should exit (nonexist)`, async () => {
+      const exitResult = opCmd.chalkedExecaSync("abracadabra");
+      expect(mockedExit).toHaveBeenCalledWith(1);
     });
 
-    it(`chalkedExeca runs a abnormal exiting script should return the process (ls nonexist)`, async () => {
-      expect(
-        opCmd.chalkedExeca("ls", ["nonexist-file"], false)
-      ).rejects.toBeInstanceOf(Error);
+    it(`chalkedExecaSync runs an abnormal exiting script should return an error (ls nonexist)`, async () => {
+      const error = opCmd.chalkedExecaSync("sh", ["-c", "exit 121"], false);
+      expect(error).toBeInstanceOf(Error);
+      expect(error && error.exitCode).toEqual(121);
     });
   }
 );
