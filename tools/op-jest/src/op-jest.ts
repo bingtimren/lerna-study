@@ -16,7 +16,7 @@ opCmd.program.option("-d, --debug", "run in debug mode");
 opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
-  .action(async () => {
+  .action(() => {
     opCmd.localCopyConfig(".op-jest.config.js");
     const args: string[] = ["-c", opCmd.configFilePathCopiedLocal!];
     if (opCmd.opts.onlyChanged) {
@@ -35,18 +35,13 @@ opCmd.program
       opCmd.opts.coverage &&
       opCmd.opts.report &&
       (opCmd.getConfigFileContentParsed() as any).coverageDirectory;
-    const jestResult = await opCmd.chalkedForkPackageBin(
-      "jest",
-      undefined,
-      args,
-      false
-    );
+    const jestResult = opCmd.chalkedExecaSync("jest", args, false);
     if (toReport) {
       const rptPath = join(
         (opCmd.getConfigFileContentParsed() as any).coverageDirectory,
         "lcov-report/index.html"
       );
-      opCmd.chalkedForkPackageBin("open-cli", undefined, [rptPath]);
+      opCmd.chalkedExecaSync("open-cli", [rptPath]);
     }
     if (jestResult && jestResult.exitCode) {
       process.exit(jestResult.exitCode);

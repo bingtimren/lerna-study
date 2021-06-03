@@ -41,7 +41,7 @@ opCmd.program
 
     // open the document if asked
     if (options.open) {
-      await opCmd.chalkedForkPackageBin("open-cli", undefined, [outFilePath]);
+      opCmd.chalkedExecaSync("open-cli", [outFilePath]);
     }
   });
 

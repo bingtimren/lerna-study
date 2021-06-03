@@ -13,25 +13,17 @@ const opCmd = new OpinionedCommand(join(__dirname, ".."));
 opCmd.program
   .command("install", { isDefault: true })
   .description("(default command) install husky and the git hooks")
-  .action(async () => {
+  .action(() => {
     console.log(chalk.blueBright("Installing husky"));
-    await opCmd.chalkedForkPackageBin("husky", undefined, [
-      "install",
-      HUSKYDIR,
-    ]);
+    opCmd.chalkedExecaSync("husky", ["install", HUSKYDIR]);
     const configSetting: configs =
       opCmd.getConfigFileContentParsed() as configs;
     for (const [hook, actions] of Object.entries(configSetting)) {
       for (const action of typeof actions === "string" ? [actions] : actions) {
         console.log(
-          (await chalk.blueBright(`Adding git hook [${hook}] action: `)) +
-            action
+          chalk.blueBright(`Adding git hook [${hook}] action: `) + action
         );
-        opCmd.chalkedForkPackageBin("husky", undefined, [
-          "add",
-          join(HUSKYDIR, hook),
-          action,
-        ]);
+        opCmd.chalkedExecaSync("husky", ["add", join(HUSKYDIR, hook), action]);
       }
     }
   });

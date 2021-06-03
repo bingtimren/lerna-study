@@ -8,7 +8,7 @@ function lintFix(opCmd: OpinionedCommand, fix: boolean, globs: string[]): void {
     argv.push("--fix");
   }
   argv.push(...globs);
-  opCmd.chalkedForkPackageBin("eslint", undefined, argv, true);
+  opCmd.chalkedExecaSync("eslint", argv, true);
 }
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {

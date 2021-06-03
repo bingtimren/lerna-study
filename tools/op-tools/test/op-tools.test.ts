@@ -155,9 +155,9 @@ describe.each(testTable)(
       const content = mockedLog.mock.calls
         .map((msgs) => msgs.join("/"))
         .join(" ");
-      expect(content.match(/Running command: .+ls\s+/)?.length).toBeGreaterThan(
-        0
-      );
+      expect(
+        content.match(/Running command: .*ls\s+/)?.length || content
+      ).toBeGreaterThan(0);
     });
     it(`chalkedExecaSync runs a normal exiting script should return nothing (with args and -v)`, async () => {
       opCmd.parse(["node", "op-tools.js", "-v", "list"]);

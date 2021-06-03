@@ -52,12 +52,10 @@ opCmd.program
 
     // do tsc --build
 
-    opCmd.chalkedForkPackageBin(
-      "typescript",
-      "tsc",
-      ["--build", opCmd.configFilePathCopiedLocal!],
-      true
-    );
+    opCmd.chalkedExecaSync("tsc", [
+      "--build",
+      opCmd.configFilePathCopiedLocal!,
+    ]);
   });
 
 opCmd.program
@@ -67,17 +65,13 @@ opCmd.program
   .action(async (options) => {
     opCmd.localCopyConfig("op-tscdoc.tsconfig.json");
     // do typedoc --tsconfig
-    await opCmd.chalkedForkPackageBin(
-      "typedoc",
-      undefined,
-      ["--tsconfig", opCmd.configFilePathCopiedLocal!],
-      true
-    );
+    opCmd.chalkedExecaSync("typedoc", [
+      "--tsconfig",
+      opCmd.configFilePathCopiedLocal!,
+    ]);
     // open the document if asked
     if (options.open) {
-      await opCmd.chalkedForkPackageBin("open-cli", undefined, [
-        "docs/api/index.html",
-      ]);
+      await opCmd.chalkedExecaSync("open-cli", ["docs/api/index.html"]);
     }
   });
 
