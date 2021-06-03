@@ -206,11 +206,9 @@ export class OpinionedCommand {
   }
 
   /**
-   * First resolves the full path to the bin file of the given package by packageName and optional executable name, by inspecting
-   * the "bin" field in the package's package.json, then invokes chalkedFork with the resolved path
-   * @param packageName
-   * @param executable
-   * @param args
+   * invokes [execa.sync](https://github.com/sindresorhus/execa#catching-an-error-with-the-sync-method)
+   * @param file - file to be executed, see execa document
+   * @param args - arguments
    * @param exitOnError
    * @returns
    *     Promise, that resolves to nothing, if child process exists normally with code 0,
@@ -223,16 +221,23 @@ export class OpinionedCommand {
     exitOnError = true
   ): void | execa.ExecaSyncError {
     if (this.opts.verbose) {
-      /* istanbul ignore next */
       console.log(
-        chalk.cyanBright("Running command: ") + file + " " + args?.join(" ") ||
-          ""
+        chalk.cyanBright("Running command: ") +
+          file +
+          " " +
+          (args?.join(" ") || "")
       );
     }
     try {
       execa.sync(file, args, { preferLocal: true, stdio: "inherit" });
       return;
     } catch (error) {
+      console.log(
+        chalk.redBright("ERROR: command failed: ") +
+          file +
+          " " +
+          (args?.join(" ") || "")
+      );
       const syncError: execa.ExecaSyncError = error;
       if (exitOnError) {
         process.exit(
