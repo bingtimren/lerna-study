@@ -136,81 +136,7 @@ describe.each(testTable)(
         opCmd.localCopyConfig("file" + suffix, "package.json");
       }).toThrowError(/is not a directory/);
     });
-    it(`chalkedExecSync runs a command should return undefined`, () => {
-      opCmd.parse(["node", "op-tools.js", "-v", "list"]);
-      expect(opCmd.chalkedExecSync("ls")).toEqual(undefined);
-      const logMatch = mockedLog.mock.calls
-        .map((messages) => messages.join(" "))
-        .join(" ")
-        .match(/Running command: .*ls/);
-      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
-    });
-    it(`chalkedExecSync runs a failing command should return error`, () => {
-      opCmd.parse(["node", "op-tools.js", "list"]);
-      expect(
-        Object.keys(
-          opCmd.chalkedExecSync("not-a-command-absolutely", false) as Object
-        )
-      ).toContain("status");
-      const logMatch = mockedError.mock.calls
-        .map((messages) => messages.join(" "))
-        .join(" ")
-        .match(/ERROR: command failed: .*not-a-command/);
-      expect(logMatch !== null && logMatch.length === 1).toEqual(true);
-    });
-    it(`chalkedExecSync runs a failing command should exit`, () => {
-      opCmd.parse(["node", "op-tools.js", "list"]);
-      opCmd.chalkedExecSync("not-a-command-absolutely");
-      expect(mockedExit.mock.calls[0][0]).toBeGreaterThan(0);
-    });
-    it(`chalkFork runs a normal exiting script should return nothing`, async () => {
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["NORMAL"]
-      );
-      expect(exitResult).toBeUndefined();
-    });
-    it(`chalkFork runs a non-zero exiting script should return the child process`, async () => {
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["NONZERO"],
-        false
-      );
-      expect(exitResult && exitResult.exitCode === 1).toEqual(true);
-    });
-    it(`chalkFork runs an interrupted script should return the child process`, async () => {
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["KILL"],
-        false
-      );
-      expect(exitResult && exitResult.signalCode === "SIGTERM").toEqual(true);
-    });
-    it(`chalkFork runs a normal exiting script should return nothing, verbose`, async () => {
-      opCmd.parse(["node", "op-tools.js", "-v", "list"]);
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["NORMAL"]
-      );
-      expect(exitResult).toBeUndefined();
-    });
-    it(`chalkFork runs a non-zero exiting script should exit`, async () => {
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["NONZERO"],
-        true
-      );
-      expect(mockedExit).toHaveBeenLastCalledWith(1);
-    });
-    it(`chalkFork runs an interrupted script should exit`, async () => {
-      const exitResult = await opCmd.chalkedFork(
-        join(__dirname, "forkTest.js"),
-        ["KILL"],
-        true
-      );
-      expect(mockedExit).toHaveBeenLastCalledWith(1);
-    });
-    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli and depcruise for testing)`, async () => {
+    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli for testing)`, async () => {
       const exitResult = await opCmd.chalkedExeca(
         "open-cli",
         ["--version"],
@@ -218,9 +144,33 @@ describe.each(testTable)(
       );
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli and depcruise for testing)`, async () => {
+    it(`chalkedExeca runs a normal exiting script should return nothing (depcruise for testing)`, async () => {
+      const exitResult = await opCmd.chalkedExeca(
+        "depcruise",
+        ["--help"],
+        true
+      );
+      expect(exitResult).toBeUndefined();
+    });
+    it(`chalkedExeca runs a normal exiting script should return nothing (using defaults and -v)`, async () => {
+      opCmd.parse(["node", "op-tools.js", "-v", "list"]);
       const exitResult = await opCmd.chalkedExeca("ls");
       expect(exitResult).toBeUndefined();
+      const content = mockedLog.mock.calls
+        .map((msgs) => msgs.join("/"))
+        .join(" ");
+      expect(content.match(/Running command: .+ls\s+/)?.length).toBeGreaterThan(
+        0
+      );
+    });
+    it(`chalkedExeca runs a normal exiting script should return nothing (using defaults and -v)`, async () => {
+      opCmd.parse(["node", "op-tools.js", "-v", "list"]);
+      const exitResult = await opCmd.chalkedExeca("ls", [".", "-d"]);
+      expect(exitResult).toBeUndefined();
+      const content = mockedLog.mock.calls
+        .map((msgs) => msgs.join("/"))
+        .join(" ");
+      expect(content.match(/ls\s+\.\s+-d/)?.length).toBeGreaterThan(0);
     });
 
     it(`chalkedExeca runs an abnormal exiting script should exit (ls nonexist)`, async () => {
