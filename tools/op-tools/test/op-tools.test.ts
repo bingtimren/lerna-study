@@ -3,8 +3,6 @@ import { statSync, readFileSync, rmSync } from "fs";
 import { join } from "path";
 import { Command } from "commander";
 
-// const somethingWrong : string = 12;
-
 const mockedLog = jest.spyOn(console, "log");
 const mockedError = jest.spyOn(console, "error");
 const mockedExit = jest.spyOn(process, "exit");
@@ -212,28 +210,36 @@ describe.each(testTable)(
       );
       expect(mockedExit).toHaveBeenLastCalledWith(1);
     });
-    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
-      const exitResult = await opCmd.chalkedForkPackageBin(
-        "jest",
-        undefined,
+    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli and depcruise for testing)`, async () => {
+      const exitResult = await opCmd.chalkedExeca(
+        "open-cli",
         ["--version"],
         true
       );
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedForkPackageBin runs a normal exiting script should return nothing`, async () => {
-      const exitResult = await opCmd.chalkedForkPackageBin("jest", "jest", [
-        "--version",
-      ]);
+    it(`chalkedExeca runs a normal exiting script should return nothing (uses open-cli and depcruise for testing)`, async () => {
+      const exitResult = await opCmd.chalkedExeca("ls");
       expect(exitResult).toBeUndefined();
     });
-    it(`chalkedForkPackageBin runs a normal exiting script should return nothing (use open-cli to test resolve-bin)`, async () => {
-      const exitResult = await opCmd.chalkedForkPackageBin(
-        "open-cli",
-        undefined,
-        ["--version"],
-        false
+
+    it(`chalkedExeca runs an abnormal exiting script should exit (ls nonexist)`, async () => {
+      const exitResult = await opCmd.chalkedExeca(
+        "ls",
+        ["nonexist-file"],
+        true
       );
+      expect(mockedExit).toHaveBeenCalledWith(2);
+    });
+    it(`chalkedExeca runs an abnormal exiting script should exit (nonexist)`, async () => {
+      const exitResult = await opCmd.chalkedExeca("sdqefqweqweqwedqwedqwe");
+      expect(mockedExit).toHaveBeenCalledWith(-2);
+    });
+
+    it(`chalkedExeca runs a abnormal exiting script should return the process (ls nonexist)`, async () => {
+      expect(
+        opCmd.chalkedExeca("ls", ["nonexist-file"], false)
+      ).rejects.toBeInstanceOf(Error);
     });
   }
 );

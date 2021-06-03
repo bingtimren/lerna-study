@@ -9,8 +9,7 @@ import * as chalk from "chalk";
 import * as childProcess from "child_process";
 import { parse as jsoncParse } from "jsonc-parser";
 import { promiseExit } from "child-process-toolbox";
-
-const rbin = require("@bingsjs/resolve-bin"); // eslint-disable-line @typescript-eslint/no-var-requires
+import * as execa from "execa";
 
 /**
  * Options for initiating an OpinionedCommand instance
@@ -286,17 +285,28 @@ export class OpinionedCommand {
    * @param args
    * @param exitOnError
    * @returns
+   *     Promise, that resolves to nothing, if child process exists normally with code 0,
+   *         or exits the process with child exit code (exitOnError:true) without resolve/reject,
+   *         or rejects with the error object
    */
-  public async chalkedForkPackageBin(
-    packageName: string,
-    executable?: string,
-    args?: string[],
+  public async chalkedExeca(
+    file: string,
+    args?: readonly string[] | undefined,
     exitOnError = true
-  ): Promise<childProcess.ChildProcess | undefined> {
-    const modulePath = rbin.sync(
-      packageName,
-      executable ? { executable } : undefined
-    );
-    return this.chalkedFork(modulePath, args, exitOnError);
+  ): Promise<void> {
+    const proc = execa(file, args, { preferLocal: true });
+    proc.stdout!.pipe(process.stdout);
+    proc.stderr!.pipe(process.stderr);
+    try {
+      await proc;
+      return;
+    } catch (err) {
+      if (exitOnError) {
+        /* istanbul ignore next */
+        process.exit(proc.exitCode && proc.exitCode !== 0 ? proc.exitCode : 1);
+      } else {
+        throw err;
+      }
+    }
   }
 }
