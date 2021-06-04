@@ -1,0 +1,11 @@
+{
+  // for VSCODE type-checking only, not for build
+  // so that includes the tests
+  "compilerOptions": {
+    /* Basic Options */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true /* Enable all strict type-checking options. */
+  },
+  "include": ["**/*.ts"]
+}
