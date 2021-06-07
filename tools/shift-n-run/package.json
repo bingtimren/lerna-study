@@ -6,7 +6,7 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
   "license": "ISC",
-  "bin": "dist/shift-n-run.js",
+  "bin": "dist/cli.js",
   "files": [
     "dist"
   ],
@@ -15,8 +15,8 @@
     "url": "git+https://github.com/bingtimren/op-tools.git"
   },
   "scripts": {
-    "build": "tsc --build tsconfig-build.json;chmod 755 dist/shift-n-run.js",
-    "test": "jest --coverage"
+    "build": "tsc --build tsconfig-build.json;chmod 755 dist/cli.js",
+    "test": "jest --coverage --no-cache"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
