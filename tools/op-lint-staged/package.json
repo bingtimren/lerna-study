@@ -29,7 +29,9 @@
     "@bingsjs/op-lint": "^0.4.2",
     "@bingsjs/op-tools": "^0.2.2",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0"
+    "markdown-toc": "^1.2.0",
+    "prettier": "^2.3.0",
+    "shift-n-run": "^0.1.0"
   },
   "gitHead": "06be4c569d29d9d010e03c68a2777fd8ccbb7acd"
 }
