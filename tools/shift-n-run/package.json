@@ -1,7 +1,7 @@
 {
   "name": "shift-n-run",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Run a command repeatedly, each time with a specified number of arguments taken from the command-line (like bash \"shift\" command) ",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
