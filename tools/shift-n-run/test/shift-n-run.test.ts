@@ -24,6 +24,16 @@ test("a normal run, covering function action", async () => {
   });
 });
 
+test("a normal run, uses prefix, covering function action", async () => {
+  await action({
+    n: "1",
+    arguments: ["README.md", "tsconfig.json", "."],
+    command: ["ls", "^-l", "^1"],
+    concurrency: "1",
+    prefix: "^",
+  });
+});
+
 test("error: from command execution", async () => {
   const cmdProc = execa("dist/cli.js", [
     "-c",

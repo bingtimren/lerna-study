@@ -33,10 +33,26 @@ program
     "(optional) number of maximum concurrency, '0' indicates unlimited concurrency",
     "0"
   )
+  .option(
+    "-v, --verbose",
+    "(optional) show commands outputs even when succeed",
+    false
+  )
   .action(async () => {
     try {
-      await action(program.opts() as CLIOptions);
+      const results = await action(program.opts() as CLIOptions);
       console.log(chalk.cyanBright("All execution finished successful."));
+      if (program.opts().verbose) {
+        results.forEach((r) => {
+          console.log(chalk.greenBright(`OUTPUTS from command: `) + r.command);
+          if (r.stdout) {
+            console.log(r.stderr);
+          }
+          if (r.stdout) {
+            console.log(r.stdout);
+          }
+        });
+      }
     } catch (error) {
       console.log(chalk.redBright("ERROR: execution finished with error"));
       console.log(chalk.yellowBright((error as Error).message));

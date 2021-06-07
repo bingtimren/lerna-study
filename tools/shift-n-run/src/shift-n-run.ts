@@ -11,7 +11,9 @@ export interface CLIOptions {
   command: string[];
 }
 
-export async function action(opts: CLIOptions): Promise<void> {
+export async function action(
+  opts: CLIOptions
+): Promise<execa.ExecaReturnValue[]> {
   const n: number = Number.parseInt(opts.n);
   const argPool: string[] = opts.arguments;
   const prefix: string = opts.prefix;
@@ -27,12 +29,14 @@ export async function action(opts: CLIOptions): Promise<void> {
   const cmdArgs: (string | number)[] = (opts.command as string[]).map(
     (cmdArg) => {
       if (cmdArg.startsWith(prefix)) {
-        const pos: number = Number.parseInt(cmdArg.substr(prefix.length));
-        if (pos > n || pos < 1) {
+        const followVal = cmdArg.substr(prefix.length);
+        const pos: number = Number.parseInt(followVal);
+        if (Number.isNaN(pos)) {
+          return followVal; // if not a number, return with prefix removed
+        } else if (pos > n || pos < 1) {
           const message = `ERROR: place-holder ${cmdArg} must >0 and <= number of arguments taken at a time (${n})`;
           throw new Error(message);
-        }
-        return pos;
+        } else return pos;
       } else {
         return cmdArg;
       }
@@ -54,11 +58,14 @@ export async function action(opts: CLIOptions): Promise<void> {
   }
 
   // the mapper for p-map
-  async function mapper(args: string[]): Promise<void | execa.ExecaError> {
+  async function mapper(
+    args: string[]
+  ): Promise<execa.ExecaReturnValue | execa.ExecaError> {
+    const proc = execa(command, args, {
+      preferLocal: true,
+    });
     try {
-      await execa(command, args, {
-        preferLocal: true,
-      });
+      return await proc;
     } catch (err) {
       return err;
     }
@@ -71,7 +78,7 @@ export async function action(opts: CLIOptions): Promise<void> {
   // report
 
   const errors: execa.ExecaError[] = mapResult.filter(
-    (v) => v !== undefined
+    (v) => v instanceof Error
   ) as execa.ExecaError[];
   if (errors.length > 0) {
     const errorMessages = [];
@@ -81,4 +88,6 @@ export async function action(opts: CLIOptions): Promise<void> {
     });
     throw new Error(errorMessages.join("\n"));
   }
+  // no error, return result
+  return mapResult;
 }
