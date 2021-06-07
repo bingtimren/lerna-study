@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.3.0...@bingsjs/op-lint-staged@0.3.1) (2021-06-07)
+
+
+### Bug Fixes
+
+* **op-lint-staged:** correct lint staged config for markdown files ([a3dc644](https://github.com/bingtimren/op-tools/commit/a3dc644f5fa3cee4bbd9c5801a4cb40eddbc1f6e))
+
+
+
+
+
 # [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.8...@bingsjs/op-lint-staged@0.3.0) (2021-06-07)
 
 
