@@ -2,5 +2,5 @@
   "**/*.ts": ["op-lint fix"],
   "**/*.js": ["op-lint fix"],
   "**/*.json": ["op-lint fix", "prettier --write"],
-  "**/*.md": ["shift-n-run -c markdown-toc \"-i\" -a"]
+  "**/*.md": ["shift-n-run -c markdown-toc ^-i ^1 -a"]
 }
