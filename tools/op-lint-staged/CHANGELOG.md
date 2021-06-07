@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.8...@bingsjs/op-lint-staged@0.3.0) (2021-06-07)
+
+
+### Features
+
+* **op-lint-staged:** add handling of markdown with markdown-toc ([9ee2a08](https://github.com/bingtimren/op-tools/commit/9ee2a089d298681db9fe043dffe4e4e0a05bc298))
+
+
+
+
+
 ## [0.2.8](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.2.7...@bingsjs/op-lint-staged@0.2.8) (2021-05-28)
 
 **Note:** Version bump only for package @bingsjs/op-lint-staged

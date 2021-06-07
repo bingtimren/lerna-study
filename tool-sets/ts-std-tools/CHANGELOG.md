@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.3.10...@bingsjs/ts-std-tools@0.4.0) (2021-06-07)
+
+
+### Features
+
+* **op-tsc:** rename package @bingsjs/op-tsc to op-tscdoc, prepare to add typedoc ([1630ae1](https://github.com/bingtimren/op-tools/commit/1630ae1ddd24c1a9e3cb1d48b5a8cd2c1d4125d3))
+
+
+
+
+
 ## [0.3.10](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.3.9...@bingsjs/ts-std-tools@0.3.10) (2021-05-28)
 
 **Note:** Version bump only for package @bingsjs/ts-std-tools

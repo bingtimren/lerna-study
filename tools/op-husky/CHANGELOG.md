@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.9](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.8...@bingsjs/op-husky@0.2.9) (2021-06-07)
+
+
+### Bug Fixes
+
+* fixed all tools to use new chalkedExecaSync method, all tests passed ([0d3fdbf](https://github.com/bingtimren/op-tools/commit/0d3fdbfc7ed2ecdee27e9b4208e0950d5f75aa72))
+
+
+
+
+
 ## [0.2.8](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.2.7...@bingsjs/op-husky@0.2.8) (2021-05-28)
 
 **Note:** Version bump only for package @bingsjs/op-husky
