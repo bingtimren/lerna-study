@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.5.0...@bingsjs/ts-std-tools@0.6.0) (2021-06-08)
+
+
+### Features
+
+* **ts-std-tools:** add op-husky to ts-std-tools ([d82e4ed](https://github.com/bingtimren/op-tools/commit/d82e4ede4136f101510a6b1ef2bee03cad337903))
+
+
+
+
+
 # [0.5.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.4.2...@bingsjs/ts-std-tools@0.5.0) (2021-06-08)
 
 
