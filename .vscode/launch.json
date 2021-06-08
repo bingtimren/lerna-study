@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Active Jest Test",
-      "cwd": "${fileDirname}${pathSeparator}..",
+      "cwd": "${fileDirname}",
       "runtimeArgs": [
         "--inspect-brk",
         "${workspaceFolder}/node_modules/.bin/jest",

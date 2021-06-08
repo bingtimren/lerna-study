@@ -1,5 +1,10 @@
 import { action } from "../src/shift-n-run";
+import { join } from "path";
 import * as execa from "execa";
+
+beforeEach(() => {
+  process.chdir(join(__dirname, ".."));
+});
 
 test("a normal run", async () => {
   await execa("dist/cli.js", [
