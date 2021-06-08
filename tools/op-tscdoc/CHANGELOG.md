@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-tscdoc@0.2.0...@bingsjs/op-tscdoc@0.2.1) (2021-06-08)
+
+**Note:** Version bump only for package @bingsjs/op-tscdoc
+
+
+
+
+
 # 0.2.0 (2021-06-07)
 
 

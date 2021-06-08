@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-tools@0.3.0...@bingsjs/op-tools@0.3.1) (2021-06-08)
+
+**Note:** Version bump only for package @bingsjs/op-tools
+
+
+
+
+
 # [0.3.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-tools@0.2.2...@bingsjs/op-tools@0.3.0) (2021-06-07)
 
 
