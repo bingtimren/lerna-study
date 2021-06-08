@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.4.0...@bingsjs/op-husky@0.4.1) (2021-06-08)
+
+
+### Bug Fixes
+
+* fix option --find-git-dir ([a1094f2](https://github.com/bingtimren/op-tools/commit/a1094f2523dd691ad9fa673c1e383de620f2e296))
+
+
+
+
+
 # [0.4.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.3.0...@bingsjs/op-husky@0.4.0) (2021-06-08)
 
 
