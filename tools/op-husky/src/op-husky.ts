@@ -19,11 +19,11 @@ opCmd.program
     "--find-git-dir",
     "find the .git dir, from the current dir, then the parent directory and so on. Useful when called in a lifecycle script (e.g. 'postinstall') of a tool-set package."
   )
-  .action(() => {
+  .action((opts) => {
     const originalCwd = process.cwd();
     let curDir = originalCwd;
     // find .git dir
-    if (opCmd.opts.findGitDir) {
+    if (opts.findGitDir) {
       /*eslint no-constant-condition: ["error", { "checkLoops": false }]*/
       while (true) {
         try {
