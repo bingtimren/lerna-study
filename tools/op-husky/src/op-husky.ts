@@ -11,8 +11,8 @@ const HUSKYDIR = ".husky";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."));
 opCmd.program
-  .command("install", { isDefault: true })
-  .description("(default command) install husky and the git hooks")
+  .command("install", { isDefault: false })
+  .description("install husky and the git hooks")
   .action(() => {
     console.log(chalk.blueBright("Installing husky"));
     opCmd.chalkedExecaSync("husky", ["install", HUSKYDIR]);
