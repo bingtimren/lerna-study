@@ -1,0 +1,10 @@
+{
+  "name": "test-proj",
+  "version": "0.1.0",
+  "description": "project for e2e test",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@bingsjs/ts-std-tools": ">0.0.0"
+  }
+}
