@@ -16,7 +16,7 @@
   "scripts": {
     "build": "echo no build is needed",
     "test": "echo no test and it is ok",
-    "postinstall": "op-husky install"
+    "postinstall": "op-husky install --find-git-dir"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
