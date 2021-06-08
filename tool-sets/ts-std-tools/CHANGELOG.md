@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.6.0...@bingsjs/ts-std-tools@0.6.1) (2021-06-08)
+
+
+### Bug Fixes
+
+* **ts-std-tools:** add --find-git-dir to let op-husky find git root dir ([2012018](https://github.com/bingtimren/op-tools/commit/2012018fab78bfa4a1a6467d2a1053bdf29a059e))
+
+
+
+
+
 # [0.6.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.5.0...@bingsjs/ts-std-tools@0.6.0) (2021-06-08)
 
 
