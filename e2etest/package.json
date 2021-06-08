@@ -5,13 +5,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-prepare": "cd testProj;rm -fr .git;rm -fr .husky;rm -fr node_modules;rm -fr yarn.lock;git init; yarn install; git add .;git commit -m init;",
+    "clean!!": "cd testProj;rm -fr .git;git stash;git reset --hard;git clean -fdx"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
+    "child-process-toolbox": "^3.0.1",
     "execa": "^5.1.1",
     "jest": "^27.0.4",
-    "nixt": "^0.5.1",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.2"
   }
