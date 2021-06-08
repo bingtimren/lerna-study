@@ -12,7 +12,7 @@ module.exports = {
   overrides: [
     // for Javascript, use air-bnb configs & run prettier
     {
-      files: ["*.js", "*.tsx"],
+      files: ["*.js", "*.jsx"],
       extends: ["airbnb-base", "prettier"],
       parserOptions: {
         ecmaVersion: 12,
