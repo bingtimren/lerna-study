@@ -4,6 +4,10 @@
   "description": "project for e2e test",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "echo BUILD SCRIPT EXECUTED",
+    "test": "echo TEST SCRIPT EXECUTED"
+  },
   "devDependencies": {
     "@bingsjs/ts-std-tools": ">0.0.0"
   }
