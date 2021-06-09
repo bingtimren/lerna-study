@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "test-prepare": "cd testProj;rm -fr .git;rm -fr .husky;rm -fr node_modules;rm -fr yarn.lock;git init; yarn install; git add .;git commit -m init;",
-    "clean!!": "cd testProj;rm -fr .git;git stash;git reset --hard;git clean -fdx"
+    "test-prepare": "yarn test-clean; cd testProj; git init; git add .;git commit -m init; yarn install",
+    "test-clean": "cd testProj;rm -fr .git;git stash;git reset --hard;git clean -fdx"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
