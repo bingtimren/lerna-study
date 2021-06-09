@@ -5,9 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest",
-    "test-prepare": "yarn test-clean; cd testProj; git init; git add .;git commit -m init; yarn install",
-    "test-clean": "rm -fr testProj/.git;git stash testProj;git reset --hard testProj;git clean -fdx testProj"
+    "test": "jest --runInBand",
+    "test-prepare": "yarn test-clean; cd testProj; git init; git add .;git commit -m init; yarn install; pwd; cp -r ../testProjChange/* .",
+    "test-clean": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fdx testProj"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
