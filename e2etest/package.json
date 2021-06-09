@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "test-prepare": "yarn test-clean; cd testProj; git init; git add .;git commit -m init; yarn install",
-    "test-clean": "cd testProj;rm -fr .git;git stash;git reset --hard;git clean -fdx"
+    "test-clean": "rm -fr testProj/.git;git stash testProj;git reset --hard testProj;git clean -fdx testProj"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
