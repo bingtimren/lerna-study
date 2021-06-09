@@ -5,8 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles",
-    "prepare": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fdx testProj; cd testProj;git init;git add .;git commit -m init;yarn install;cp -r ../testProjChange/* .",
+    "test": "jest --runInBand --no-cache",
+    "prepare": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fdx testProj; cd testProj;git init;git add .;git commit -m init;git tag init;yarn install;cp -r ../testProjChange/* .",
     "clean": "cd testProj/.git;git stash -- .;git reset --hard;git clean -fd"
   },
   "devDependencies": {

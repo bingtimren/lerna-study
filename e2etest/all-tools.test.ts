@@ -8,18 +8,24 @@ jest.setTimeout(60000);
 beforeEach(async () => {
   // clean up but keep husky, yarn.lock and node_modules to save time
   process.chdir(path.join(__dirname, "testProj"));
-  expect(fs.statSync(".git").isDirectory()).toEqual(true);
-  execa.commandSync("git reset --hard");
+  expect(
+    fs.statSync(".git").isDirectory() &&
+      fs.statSync(".husky").isDirectory() &&
+      fs.statSync("node_modules/@bingsjs").isDirectory() &&
+      fs
+        .readFileSync(".git/config")
+        .toString()
+        .match(/hooksPath \= \.husky/) !== null
+  ).toEqual(true);
+  execa.commandSync("git reset --hard init");
   execa.commandSync("git clean -fd");
   execa.commandSync("cp -r ../testProjChange/* .", { shell: true });
 });
 
-test("op-husky and git hooks", () => {
-  expect(fs.statSync(".husky").isDirectory()).toEqual(true);
-});
-
 test("op-husky and git hooks - lint and commitizen", async () => {
-  const gitCommit = execa.command("git commit -a");
+  const gitCommit = execa.command("git commit -a --no-edit", { shell: true });
+  pt.echoChildProcessOutput(gitCommit);
+
   await Promise.all([
     pt.promiseOutputPattern(gitCommit, /BUILD SCRIPT EXECUTED/, {
       timeoutInMs: 10000,
@@ -33,5 +39,51 @@ test("op-husky and git hooks - lint and commitizen", async () => {
       { timeoutInMs: 10000 }
     ),
   ]);
-  await pt.promiseKilled(gitCommit, "SIGKILL");
+  gitCommit.stdin?.write("\n"); // select a type
+  await pt.promiseOutputPattern(gitCommit, /What is the scope of this change/, {
+    timeoutInMs: 10000,
+  });
+  gitCommit.stdin?.write("scope\n");
+  await pt.promiseOutputPattern(
+    gitCommit,
+    /Write a short, imperative tense description of the change/,
+    { timeoutInMs: 10000 }
+  );
+  gitCommit.stdin?.write("short desc\n");
+
+  await pt.promiseOutputPattern(
+    gitCommit,
+    /Provide a longer description of the change/,
+    { timeoutInMs: 10000 }
+  );
+  gitCommit.stdin?.write("long desc\n");
+
+  await pt.promiseOutputPattern(gitCommit, /Are there any breaking changes/, {
+    timeoutInMs: 10000,
+  });
+  gitCommit.stdin?.write("N\n");
+
+  await pt.promiseOutputPattern(
+    gitCommit,
+    /Does this change affect any open issues/,
+    { timeoutInMs: 10000 }
+  );
+  gitCommit.stdin?.write("N\n");
+
+  await pt.promiseOutputPattern(
+    gitCommit,
+    /\[master \w+] \w+\(scope\)\: short desc/,
+    { timeoutInMs: 10000 }
+  );
+  await gitCommit;
+});
+
+test("pipe", async () => {
+  const bash = execa.command("bash");
+  pt.echoChildProcessOutput(bash);
+  bash.stdin!.write("\n");
+  bash.stdin!.write("echo YES\n");
+  await pt.promiseOutputPattern(bash, /YES/, { timeoutInMs: 1000 });
+  bash.stdin!.write("exit\n");
+  await pt.promiseExit(bash);
 });
