@@ -5,9 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest --runInBand",
-    "test-prepare": "yarn test-clean; cd testProj; git init; git add .;git commit -m init; yarn install; pwd; cp -r ../testProjChange/* .",
-    "test-clean": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fdx testProj"
+    "test": "jest --runInBand --detectOpenHandles",
+    "prepare": "yarn clean; cd testProj; git init; git add .;git commit -m init; yarn install; pwd; cp -r ../testProjChange/* .",
+    "hardclean": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fdx testProj",
+    "clean": "rm -fr testProj/.git;git stash -- testProj;git restore --source=HEAD --worktree -- testProj;git clean -fd testProj"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
