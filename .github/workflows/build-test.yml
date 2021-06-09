@@ -28,6 +28,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: lerna bootstrap
+    - run: lerna bootstrap --ignore-scripts
     - run: lerna run --stream --no-progress --concurrency 1 build
     - run: lerna run --stream --no-progress --concurrency 1 test

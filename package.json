@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "husky install",
     "git:hook:pre-commit": "lint-staged -v",
-    "all": "yarn install; husky install; lerna bootstrap --ignore-scripts; lerna run --stream build; lerna run --stream test"
+    "all": "lerna bootstrap --ignore-scripts; lerna run build; lerna run test"
   },
   "workspaces": [
     "tools/*",
