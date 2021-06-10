@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-jest@0.1.7...@bingsjs/op-jest@0.1.8) (2021-06-10)
+
+**Note:** Version bump only for package @bingsjs/op-jest
+
+
+
+
+
 ## [0.1.7](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-jest@0.1.6...@bingsjs/op-jest@0.1.7) (2021-06-08)
 
 **Note:** Version bump only for package @bingsjs/op-jest

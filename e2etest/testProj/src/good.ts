@@ -1,4 +1,4 @@
 /**
  * good constant
  */
-export const good = "good";
+export const good = "Good!!";

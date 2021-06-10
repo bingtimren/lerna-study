@@ -37,5 +37,10 @@
       "eslint -c root-eslintrc.js --no-error-on-unmatched-pattern --fix",
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
