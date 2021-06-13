@@ -1,6 +1,7 @@
 const nixt = require("nixt");
 
 nixt()
+  .cwd("./testProj")
   .exec("git reset --hard init")
   .exec("git clean -fd")
   .exec("cp -r ../testProjChange/* .")
