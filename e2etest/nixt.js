@@ -8,61 +8,27 @@ nixt()
   .stdout("BSSUILD SCRSSIPT EXESSCUTED")
   .on("Select the type of change that you're committing")
   .respond("\n")
+  .on("What is the scope of this change")
+  .respond("scope\n")
+  .on("Write a short, imperative tense description of the change")
+  .respond("short desc\n")
+  .on("Provide a longer description of the change")
+  .respond("long desc\n")
+  .on("Are there any breaking changes")
+  .respond("N\n")
+  .on("Does this change affect any open issues")
+  .respond("N\n")
+  .on("")
+  .respond("\n")
+  .on("")
+  .respond("\n")
+  .on("")
+  .respond("\n")
+  .on("")
+  .respond("\n")
+  .stdout("(scope): short desc")
   .end();
 
-//   const gitCommit = execa.command("git commit -a --no-edit", { shell: true });
-//   pt.echoChildProcessOutput(gitCommit);
-
-//   await Promise.all([
-//     pt.promiseOutputPattern(gitCommit, /BUILD SCRIPT EXECUTED/, {
-//       timeoutInMs: 10000,
-//     }),
-//     pt.promiseOutputPattern(gitCommit, /TEST SCRIPT EXECUTED/, {
-//       timeoutInMs: 10000,
-//     }),
-//     pt.promiseOutputPattern(
-//       gitCommit,
-//       /Select the type of change that you're committing/,
-//       { timeoutInMs: 10000 }
-//     ),
-//   ]);
-//   process.stdin.setRawMode(true);
-//   // process.stdin.resume();
-//   process.stdin.write("\r\n")
-//   gitCommit.stdin!.write("\r\n"); // select a type
-
-//   await pt.promiseOutputPattern(gitCommit, /What is the scope of this change/, {
-//     timeoutInMs: 10000,
-//   });
-//   gitCommit.stdin?.write("scope\n");
-//   await pt.promiseOutputPattern(
-//     gitCommit,
-//     /Write a short, imperative tense description of the change/,
-//     { timeoutInMs: 10000 }
-//   );
-//   gitCommit.stdin?.write("short desc\n");
-
-//   await pt.promiseOutputPattern(
-//     gitCommit,
-//     /Provide a longer description of the change/,
-//     { timeoutInMs: 10000 }
-//   );
-//   gitCommit.stdin?.write("long desc\n");
-
-//   await pt.promiseOutputPattern(gitCommit, /Are there any breaking changes/, {
-//     timeoutInMs: 10000,
-//   });
-//   gitCommit.stdin?.write("N\n");
-
-//   await pt.promiseOutputPattern(
-//     gitCommit,
-//     /Does this change affect any open issues/,
-//     { timeoutInMs: 10000 }
-//   );
-//   gitCommit.stdin?.write("N\n");
-
-//   await pt.promiseOutputPattern(
-//     gitCommit,
 //     /\[master \w+] \w+\(scope\)\: short desc/,
 //     { timeoutInMs: 10000 }
 //   );
