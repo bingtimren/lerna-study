@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+// intentionally misspelled file name in order to avoid op-jest running it as a test (causing dead-loop)
+
 const childProcess = require("child_process");
 
 function checkResults(regExArray, output) {
