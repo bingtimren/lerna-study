@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-jest@0.1.8...@bingsjs/op-jest@0.2.0) (2021-06-17)
+
+
+### Code Refactoring
+
+* **op-jest:** change test dir from "tests" to "test" ([072b2e1](https://github.com/bingtimren/op-tools/commit/072b2e1393e62f0d67ebb7bd4aecab74fcf4d48f))
+
+
+### BREAKING CHANGES
+
+* **op-jest:** "tests" dir no longer regarded as containing tests and are ignored
+
+
+
+
+
 ## [0.1.8](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-jest@0.1.7...@bingsjs/op-jest@0.1.8) (2021-06-10)
 
 **Note:** Version bump only for package @bingsjs/op-jest
