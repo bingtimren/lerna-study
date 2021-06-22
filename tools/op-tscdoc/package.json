@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-tscdoc",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "Opinioned tsc & typedoc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
