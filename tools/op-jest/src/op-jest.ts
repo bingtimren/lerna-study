@@ -3,7 +3,7 @@ import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
 
 const opCmd = new OpinionedCommand(join(__dirname, ".."), {
-  configFileSuffix: ".js",
+  configFileSuffix: ".cjs",
 });
 opCmd.program.option(
   "-o, --onlyChanged",
@@ -17,7 +17,7 @@ opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
   .action(() => {
-    opCmd.localCopyConfig(".op-jest.config.js");
+    opCmd.localCopyConfig(".op-jest.config.cjs");
     const args: string[] = ["-c", opCmd.configFilePathCopiedLocal!];
     if (opCmd.opts.onlyChanged) {
       args.push("--onlyChanged");
