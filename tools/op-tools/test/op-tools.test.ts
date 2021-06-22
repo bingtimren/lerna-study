@@ -9,7 +9,7 @@ const mockedExit = jest.spyOn(process, "exit");
 
 const testTable: [boolean, string][] = [];
 for (const useLocalCopy of [true, false]) {
-  for (const suffix of [".js", ".json", ".jsonc"]) {
+  for (const suffix of [".js", ".json", ".jsonc", ".cjs"]) {
     testTable.push([useLocalCopy, suffix]);
   }
 }

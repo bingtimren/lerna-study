@@ -154,7 +154,10 @@ export class OpinionedCommand {
       this.configFilePath.endsWith(".json")
     ) {
       return jsoncParse(this.getConfigFileContent().toString());
-    } else if (this.configFilePath.endsWith(".js")) {
+    } else if (
+      this.configFilePath.endsWith(".js") ||
+      this.configFilePath.endsWith(".cjs")
+    ) {
       const absPath = path.isAbsolute(this.configFilePath)
         ? this.configFilePath
         : path.join(process.cwd(), this.configFilePath);
