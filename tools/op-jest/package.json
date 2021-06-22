@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-jest",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Opinioned jest - call jest with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
