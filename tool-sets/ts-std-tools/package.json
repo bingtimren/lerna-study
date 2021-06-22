@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/ts-std-tools",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "private": false,
   "description": "Standard tools for a typescript repo",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@bingsjs/op-commitizen": "^0.3.6",
     "@bingsjs/op-commitlint": "^0.2.8",
-    "@bingsjs/op-husky": "^0.4.3",
+    "@bingsjs/op-husky": "^0.4.4",
     "@bingsjs/op-jest": "^0.2.1",
     "@bingsjs/op-lint": "^0.4.6",
     "@bingsjs/op-lint-staged": "^0.3.5",
