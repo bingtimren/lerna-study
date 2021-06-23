@@ -1,0 +1,4 @@
+ignores:
+- jest
+- open-cli
+- ts-jest

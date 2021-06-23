@@ -1,0 +1,5 @@
+ignores:
+- "@bingsjs/op-lint"
+- markdown-toc
+- prettier
+- shift-n-run
