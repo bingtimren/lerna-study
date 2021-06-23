@@ -31,3 +31,4 @@ jobs:
     - run: lerna bootstrap --ignore-scripts
     - run: lerna run --stream --no-progress --concurrency 1 build
     - run: lerna run --stream --no-progress --concurrency 1 test
+    - run: lerna exec --stream --no-progress --concurrency 1 yarn depcheck
