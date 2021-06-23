@@ -6,10 +6,5 @@ Opinioned-tools (op-tools) are pre-configured tools (linting, testing, etc.) tha
 
 ## Usage
 
-Not for direct usage, but for extension.
+See other opinionated tools for usage.
 
-```
-const opTools = require('op-tools');
-
-// TODO: DEMONSTRATE API
-```

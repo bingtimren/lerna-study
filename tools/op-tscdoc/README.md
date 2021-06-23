@@ -4,7 +4,7 @@ Compiles Typescript (tsc) and documents (typedoc)
 
 ## Usage
 
-Run with `--help`
+See `--help`
 
 ## Main Assumptions
 
@@ -14,7 +14,7 @@ Project layout:
 - "/test": Tests are put under "test" dir and are named with suffix ".test.ts", ".spec.ts", ".test.js", or ".spec.js"
 - "/docs": Documents, and generated API documents are put under "docs/api" dir
 
-Project and Codes:
-- tsc config "module":"es2020": emit ESM codes
-- tsc config "esModuleInterop": true
-- tsc config "target": "ES2020"
+TSC Options:
+- "module":"es2020": emit ESM codes
+- "esModuleInterop": true
+- "target": "ES2020"
