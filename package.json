@@ -5,7 +5,7 @@
     "prepare": "husky install",
     "git:hook:pre-commit": "lint-staged -v",
     "all": "lerna bootstrap --ignore-scripts; lerna run build; lerna run test; lerna exec npx depcheck",
-    "public-publish": "lerna publish --registry https://registry.npmjs.org"
+    "public-publish": "lerna publish --force-publish --registry https://registry.npmjs.org"
   },
   "workspaces": [
     "tools/*",
