@@ -12,7 +12,10 @@ opCmd.program.option(
 opCmd.program.option("-w, --watch", "watch file change and run related tests");
 opCmd.program.option("--coverage", "collect and enforce coverage");
 opCmd.program.option("-r, --report", "open coverage report");
-opCmd.program.option("-d, --debug", "run in debug mode");
+opCmd.program.option(
+  "-d, --debug",
+  "run jest with --runInBand to test in debug mode"
+);
 opCmd.program
   .command("test", { isDefault: true })
   .description("(default command) run jest")
