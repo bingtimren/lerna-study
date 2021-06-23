@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.4.6...@bingsjs/op-husky@0.5.0) (2021-06-23)
+
+
+### Bug Fixes
+
+* **op-husky:** depcheck added to ignore list to prevent faluse-failure ([f0264d0](https://github.com/bingtimren/op-tools/commit/f0264d09c0c2d4bc1d2fc12df4e2b0b32c00e702))
+* after depcheck, fixed some dependency issues ([0a6325a](https://github.com/bingtimren/op-tools/commit/0a6325aa844ddd02159dbf540313219a84088848))
+
+
+### Features
+
+* **op-husky:** ignore adding an action when it's already in the hook (redundant) ([4d65a88](https://github.com/bingtimren/op-tools/commit/4d65a8865ab1dfd2de00f1417e0cce68e296ee3b))
+* add depcheck to husky pre-commit for lerna ([58e01f7](https://github.com/bingtimren/op-tools/commit/58e01f7c8832a82f8eb7c4d0f031ff8e21a61188))
+* **op-husky:** add depcheck to pre-commit ([54be048](https://github.com/bingtimren/op-tools/commit/54be048961f973421fcb2927602ad74aac751ec6))
+
+
+
+
+
 ## [0.4.6](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.4.5...@bingsjs/op-husky@0.4.6) (2021-06-23)
 
 **Note:** Version bump only for package @bingsjs/op-husky

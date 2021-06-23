@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-tools@0.4.0...@bingsjs/op-tools@0.4.1) (2021-06-23)
+
+
+### Bug Fixes
+
+* remove unused dependency ([35bf377](https://github.com/bingtimren/op-tools/commit/35bf377a5d7ba14e428127e9065ecddb8163d8e4))
+
+
+
+
+
 # [0.4.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-tools@0.3.3...@bingsjs/op-tools@0.4.0) (2021-06-22)
 
 

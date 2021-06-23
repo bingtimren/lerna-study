@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.7](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.3.6...@bingsjs/op-lint-staged@0.3.7) (2021-06-23)
+
+
+### Bug Fixes
+
+* after depcheck, fixed some dependency issues ([0a6325a](https://github.com/bingtimren/op-tools/commit/0a6325aa844ddd02159dbf540313219a84088848))
+
+
+
+
+
 ## [0.3.6](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.3.5...@bingsjs/op-lint-staged@0.3.6) (2021-06-22)
 
 **Note:** Version bump only for package @bingsjs/op-lint-staged

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.5](https://github.com/bingtimren/op-tools/compare/shift-n-run@0.3.4...shift-n-run@0.3.5) (2021-06-23)
+
+**Note:** Version bump only for package shift-n-run
+
+
+
+
+
 ## [0.3.4](https://github.com/bingtimren/op-tools/compare/shift-n-run@0.3.3...shift-n-run@0.3.4) (2021-06-17)
 
 **Note:** Version bump only for package shift-n-run
