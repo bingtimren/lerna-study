@@ -1,9 +1,0 @@
-{
-  "pre-commit": [
-    "yarn op-lint-staged",
-    "lerna run --stream --since HEAD build",
-    "lerna run --stream --since HEAD test"
-  ],
-  "commit-msg": "yarn op-commit-lint $1",
-  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true"
-}

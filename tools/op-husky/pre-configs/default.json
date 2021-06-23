@@ -1,5 +1,0 @@
-{
-  "pre-commit": ["yarn run build", "yarn run test", "yarn op-lint-staged"],
-  "commit-msg": "yarn op-commitlint $1",
-  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true"
-}

@@ -1,0 +1,10 @@
+/* Suitable for a lerna repo */
+{
+  "pre-commit": [
+    "lerna run --stream --since HEAD build", // build changed and affected packages
+    "lerna run --stream --since HEAD test", // test changed and affected packages
+    "yarn op-lint-staged" // further invoking op-lint-staged to process staged files
+  ],
+  "commit-msg": "yarn op-commit-lint $1", // enforce commit message with op-commit-lint
+  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true" // use commitizen to compose commit message
+}

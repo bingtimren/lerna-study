@@ -10,7 +10,9 @@ interface configs {
 
 const GITDIR = ".git";
 const HUSKYDIR = ".husky";
-const opCmd = new OpinionedCommand(join(__dirname, ".."));
+const opCmd = new OpinionedCommand(join(__dirname, ".."), {
+  configFileSuffix: ".jsonc",
+});
 
 opCmd.program
   .command("install", { isDefault: false })

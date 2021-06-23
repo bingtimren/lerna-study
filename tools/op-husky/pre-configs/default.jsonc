@@ -1,0 +1,12 @@
+
+/* Suitable for a conventional repo containing a single project
+*/
+{
+  "pre-commit": [
+    "yarn run build",
+    "yarn run test",
+    "yarn op-lint-staged" // further use op-lint-staged for processing staged files
+  ],
+  "commit-msg": "yarn op-commitlint $1", // op-commitlint for enforcing commit message format
+  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true" // op-commitizen for composing commit message
+}
