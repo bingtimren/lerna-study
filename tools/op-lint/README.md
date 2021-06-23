@@ -10,6 +10,24 @@ Lint and "prettier" Typescript (.ts), Javascript (.js), JSON (.json) and tests (
 
 See ["pre-configs"](./pre-configs)
 
+Javascript:
+- Uses air-bnb rules
+- Lint imports with eslint-plugin-import
+- prettier
+
+Typescript:
+- Use recommended pre-sets from eslint and plugins
+- Lint imports with eslint-plugin-import
+- prettier
+
+JSON:
+- Use "recommended-with-comments" pre-set
+- Allow comments
+- (no prettier, for JSON have to use prettier directly)
+
+Typescript tests:
+- Just do "prettier"
+
 ## Usage
 
 See `--help`
