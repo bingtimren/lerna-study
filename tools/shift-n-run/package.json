@@ -1,10 +1,10 @@
 {
   "name": "shift-n-run",
-  "version": "0.3.6",
+  "version": "1.0.0",
   "private": false,
-  "description": "Run a command repeatedly, each time with a specified number of arguments taken from the command-line (like bash \"shift\" command) ",
+  "description": "Run a command repeatedly, each time with a batch of a fixed number of arguments taken from a given Argument-Pool (like the bash 'shift' command), until the Argument-Pool is empty.",
   "author": "Bing Ren <bingtimren@gmail.com>",
-  "homepage": "https://github.com/bingtimren/op-tools#readme",
+  "homepage": "https://github.com/bingtimren/op-tools/tree/main/tools/shift-n-run",
   "license": "ISC",
   "bin": "dist/cli.js",
   "files": [
