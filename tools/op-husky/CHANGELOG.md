@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.0...@bingsjs/op-husky@0.5.1) (2021-06-23)
+
+
+### Bug Fixes
+
+* **op-husy:** invoke depcheck with common ignore list ([ee8ff10](https://github.com/bingtimren/op-tools/commit/ee8ff100db8e8caf849ecd5ed6b914cb9a433396))
+
+
+
+
+
 # [0.5.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.4.6...@bingsjs/op-husky@0.5.0) (2021-06-23)
 
 
