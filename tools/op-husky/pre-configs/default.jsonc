@@ -5,7 +5,8 @@
   "pre-commit": [
     "yarn run build",
     "yarn run test",
-    "yarn op-lint-staged" // further use op-lint-staged for processing staged files
+    "yarn op-lint-staged", // further use op-lint-staged for processing staged files
+    "yarn depcheck" // check dependency
   ],
   "commit-msg": "yarn op-commitlint $1", // op-commitlint for enforcing commit message format
   "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true" // op-commitizen for composing commit message
