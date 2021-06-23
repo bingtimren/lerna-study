@@ -17,7 +17,7 @@ If a project setup follows a certain assumptions (the "conventions") of these to
 
 # Assumptions (Conventions)
 
-Projects that use these tools are assumed to follow these conventions:
+Projects that use these tools are assumed to follow these main assumptions:
 
 Project layout:
 - "/src": Typescript sources 
@@ -25,7 +25,27 @@ Project layout:
 - "/test": Tests are put under "test" dir and are named with suffix ".test.ts", ".spec.ts", ".test.js", or ".spec.js"
 - "/docs": Documents, and generated API documents are put under "docs/api" dir
 
+Package:
+- tsc config "module":"es2020": emit ESM codes
+- tsc config "esModuleInterop": true
+- tsc config "target": "ES2020"
+
 More on each tool's assumption about the user project and the tool's function, please check each tool's document.
+
+# Usage
+
+Execute with "--help" to find the tool's usage. Some commands and options common to most tools are:
+```
+Options:
+  -c, --pre-config <config>  choose a pre-config (default: "default")
+  -v, --verbose              verbose mode, output more information
+  -x, --exe <executor>       choose an executor, 'npx' or 'yarn' (default: "yarn")
+  -h, --help                 display help for command
+Commands:
+  list                       list available pre-configs and exit
+  print                      print content of the pre-config and exit
+  help [command]             display help for command
+```
 
 # Contents
 

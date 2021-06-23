@@ -1,6 +1,6 @@
 # `@bingsjs/op-commitlint`
 
-> TODO: description
+Pre-configured commitlint using conventional message format
 
 ## Usage
 

@@ -1,11 +1,11 @@
 # `@bingsjs/op-husky`
 
-> TODO: description
+Pre-configured husky: install husky and the pre-configured hooks
 
 ## Usage
 
-```
-const opHusky = require('@bingsjs/op-husky');
+See `op-husky --help`
 
-// TODO: DEMONSTRATE API
-```
+## Pre-configs 
+
+See `op-husky list` and `op-husky print` or explore the [pre-configs](./pre-configs) dir
