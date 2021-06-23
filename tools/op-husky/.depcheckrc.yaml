@@ -3,3 +3,4 @@ ignores:
  - "@bingsjs/op-commitlint"
  - "@bingsjs/op-lint-staged"
  - husky
+ - depcheck

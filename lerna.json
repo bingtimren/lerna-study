@@ -12,6 +12,9 @@
     },
     "run": {
       "stream": true
+    },
+    "exec": {
+      "stream": true
     }
   }
 }
