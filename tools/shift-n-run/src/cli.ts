@@ -8,19 +8,23 @@ import { CLIOptions, action } from "./shift-n-run";
 program
   .name("shift-n-run")
   .description(
-    "Run the command repeatedly, each time with a fixed number of arguments taken from the pooled arguments (like the bash 'shift' command)"
+    "Run a command repeatedly, each time with a batch of fixed number of arguments taken from an Argument-Pool (like the bash 'shift' command), until the Argument-Pool is empty"
   )
   .requiredOption(
     "-c, --command <command-args...>",
-    "(required) the command and the arguments to run each time, use place-holders such as ^1, ^2... to indicate arguments taken from the pooled arguments"
+    "(required) the command and the command's arguments to run each time. \n" +
+      "When the command is installed with npm locally, the command can be executed directly without adding 'npx' or 'yarn'.\n" +
+      "When a command's argument is to use an argument taken from the Argument-Pool (thus may differ each time), use place-holders such as ^1, ^2... to indicate the 1st, 2nd... arguments taken from the Argument-Pool.\n" +
+      "When a command argument starts with '-' or '--', add the prefix '^' to prevent it from being interpreted as options of this (shift-n-run) command.\n" +
+      "The prefix character '^' can be changed with option --prefix."
   )
   .requiredOption(
     "-a, --arguments <pooled-arguments...>",
-    "(required) the arguments to be taken a fixed number (option -n) at a time for the execution of the command"
+    "(required) the arguments in the Argument-Pool, which are to be taken a fixed number (option -n) at a time for the repeated execution of the command"
   )
   .option(
     "-n <number-of-arguments>",
-    "(optional) number of arguments to be taken at a time",
+    "(optional) number of arguments to be taken at a time from the Argument-Pool",
     "1"
   )
   .option(
@@ -41,7 +45,7 @@ program
   .action(async () => {
     try {
       const results = await action(program.opts() as CLIOptions);
-      console.log(chalk.cyanBright("All execution finished successful."));
+      console.log(chalk.cyanBright("All executions SUCCEED."));
       if (program.opts().verbose) {
         results.forEach((r) => {
           console.log(chalk.greenBright(`OUTPUTS from command: `) + r.command);
