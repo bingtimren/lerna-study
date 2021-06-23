@@ -1,11 +1,19 @@
 # `@bingsjs/op-lint-staged`
 
-> TODO: description
+Pre-configured lint-staged to process staged files
 
 ## Usage
 
-```
-const opLintStaged = require('@bingsjs/op-lint-staged');
+Put a line in git "pre-commit" hook
 
-// TODO: DEMONSTRATE API
-```
+`yarn op-lint-staged`
+
+## Pre-configs
+
+See [pre-configs](./pre-configs) dir for pre-configuration(s)
+
+By default:
+ - Typescript (.ts): op-lint
+ - Javascript (.js): op-lint
+ - JSON (.json): op-lint and prettier
+ - Markdown (.md): markdown-toc (compile Table of Content)

@@ -15,3 +15,7 @@ To run as git hook, add the "prepare-commit-msg" hook, and put the line below:
 ``` sh
 exec < /dev/tty && yarn op-commitizen hook "$1" "$2" "$3" || true
 ```
+
+## Pre-configs
+
+Uses conventional format

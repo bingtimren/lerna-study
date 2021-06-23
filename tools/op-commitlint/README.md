@@ -15,3 +15,7 @@ or put a line in commit-msg as
 yarn op-commitlint $1
 
 ```
+
+## Pre-configs
+
+Use conventional format
