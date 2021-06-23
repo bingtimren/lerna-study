@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.12](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.6.11...@bingsjs/ts-std-tools@0.6.12) (2021-06-23)
+
+**Note:** Version bump only for package @bingsjs/ts-std-tools
+
+
+
+
+
 ## [0.6.11](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-std-tools@0.6.10...@bingsjs/ts-std-tools@0.6.11) (2021-06-23)
 
 **Note:** Version bump only for package @bingsjs/ts-std-tools
