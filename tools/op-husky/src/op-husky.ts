@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { OpinionedCommand } from "@bingsjs/op-tools";
 import { join } from "path";
-import { statSync } from "fs";
+import { statSync, readFileSync } from "fs";
 import * as chalk from "chalk";
 
 interface configs {
@@ -69,11 +69,24 @@ opCmd.program
     const configSetting: configs =
       opCmd.getConfigFileContentParsed() as configs;
     for (const [hook, actions] of Object.entries(configSetting)) {
+      const hookFileName = join(HUSKYDIR, hook);
+      const hookFileContent =
+        statSync(hookFileName) && statSync(hookFileName).isFile()
+          ? readFileSync(hookFileName).toString()
+          : null;
       for (const action of typeof actions === "string" ? [actions] : actions) {
-        console.log(
-          chalk.blueBright(`Adding git hook [${hook}] action: `) + action
-        );
-        opCmd.chalkedExecaSync("husky", ["add", join(HUSKYDIR, hook), action]);
+        if (hookFileContent && hookFileContent.includes(action)) {
+          console.log(
+            chalk.yellowBright(
+              `Ignoring redundant git hook [${hook}] action: `
+            ) + action
+          );
+        } else {
+          console.log(
+            chalk.blueBright(`Adding git hook [${hook}] action: `) + action
+          );
+          opCmd.chalkedExecaSync("husky", ["add", hookFileName, action]);
+        }
       }
     }
     process.chdir(originalCwd);
