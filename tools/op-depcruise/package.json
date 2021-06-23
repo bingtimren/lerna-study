@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-depcruise",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
   "description": "Opinioned dep-cruise",
   "author": "Bing Ren <bingtimren@gmail.com>",
