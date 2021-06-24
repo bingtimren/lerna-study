@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.3...@bingsjs/op-husky@0.5.4) (2021-06-24)
+
+
+### Bug Fixes
+
+* **op-husky:** correct a spelling error for lerna config ([d993150](https://github.com/bingtimren/op-tools/commit/d993150b8e85d5090f711fcd6a0fda44b7d3e4ee))
+
+
+
+
+
 ## [0.5.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.2...@bingsjs/op-husky@0.5.3) (2021-06-24)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/ts-lerna-std-tools",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "Standard Typescript lerna repo tools",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@bingsjs/op-commitizen": "^0.3.9",
     "@bingsjs/op-commitlint": "^0.2.12",
-    "@bingsjs/op-husky": "^0.5.3",
+    "@bingsjs/op-husky": "^0.5.4",
     "@bingsjs/op-jest": "^0.2.5",
     "@bingsjs/op-lint": "^0.4.9",
     "@bingsjs/op-lint-staged": "^0.3.8",
