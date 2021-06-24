@@ -70,10 +70,14 @@ opCmd.program
       opCmd.getConfigFileContentParsed() as configs;
     for (const [hook, actions] of Object.entries(configSetting)) {
       const hookFileName = join(HUSKYDIR, hook);
-      const hookFileContent =
-        statSync(hookFileName) && statSync(hookFileName).isFile()
-          ? readFileSync(hookFileName).toString()
-          : null;
+      const hookFileContent = (() => {
+        try {
+          return readFileSync(hookFileName).toString();
+        } catch {
+          return null;
+        }
+      })();
+
       for (const action of typeof actions === "string" ? [actions] : actions) {
         if (hookFileContent && hookFileContent.includes(action)) {
           console.log(
