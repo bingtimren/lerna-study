@@ -6,6 +6,6 @@
     "yarn op-lint-staged", // further invoking op-lint-staged to process staged files
     "lerna exec --stream --since HEAD yarn depcheck" // check dependency
   ],
-  "commit-msg": "yarn op-commit-lint $1", // enforce commit message with op-commit-lint
-  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true" // use commitizen to compose commit message
+  "commit-msg": "yarn op-commitlint $1", // op-commitlint for enforcing commit message format
+  "prepare-commit-msg": "exec < /dev/tty && yarn op-commitizen hook \"$1\" \"$2\" \"$3\" || true" // op-commitizen for composing commit message
 }
