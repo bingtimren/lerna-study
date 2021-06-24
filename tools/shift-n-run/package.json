@@ -16,7 +16,8 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig-build.json;chmod 755 dist/cli.js",
-    "test": "jest --coverage --no-cache"
+    "test": "jest --coverage --no-cache",
+    "prepack": "rm -fr dist/docs; rm -fr dist/*.map"
   },
   "bugs": {
     "url": "https://github.com/bingtimren/op-tools/issues"
