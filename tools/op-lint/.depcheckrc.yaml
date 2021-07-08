@@ -11,3 +11,4 @@ ignores:
  - somethingJustDontExist
  - yaml
  - somethingNotExist
+ - eslint-plugin-vue

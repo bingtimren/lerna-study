@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "husky install",
     "git:hook:pre-commit": "lint-staged -v",
-    "all": "lerna bootstrap --ignore-scripts; yarn husky install .husky; lerna run build; lerna run test; lerna exec npx depcheck",
+    "all": "lerna bootstrap --ignore-scripts; yarn husky install .husky; lerna exec npx depcheck; lerna run build; lerna run test",
     "public-publish": "lerna publish --force-publish --registry https://registry.npmjs.org"
   },
   "workspaces": [

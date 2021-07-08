@@ -15,6 +15,19 @@ If a project setup follows a certain assumptions (the "conventions") of these to
 - Your "package.json" and project root directory is no more cluttered by your tools' configurations and their dependencies.
 - These tools, including their pre-configurations, can be updated by normal npm package update mechanism.
 
+# Publish process
+
+Clean build and test
+
+`
+git clean -fdx
+yarn all
+`
+
+Publish
+
+
+
 # Assumptions (Conventions)
 
 Projects that use these tools are assumed to follow these main assumptions:
