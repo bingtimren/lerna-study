@@ -66,24 +66,30 @@ describe("op-lint", () => {
       execSync("dist/op-lint.js test/good-vue3.vue 2>&1");
     }).not.toThrow();
 
-    // try {
-    //   execSync("dist/op-lint.js test/good-vue3.vue.ts 2>&1");
-    //   fail("should throw");
-    // } catch (error) {
-    //   // expect to fail
-    //   expect(error.stdout.toString()).toMatch(
-    //     /error\s*Unexpected var\, use let or const instead/
-    //   );
-    //   expect(error.stdout.toString()).toMatch(
-    //     /error\s*Unable to resolve path to module 'somethingNotExist'\s+import\/no-unresolved/
-    //   );
-    //   expect(error.stdout.toString()).toMatch(
-    //     /error\s+'yaml' should be listed in the project's dependencies\. Run 'npm i \-S yaml' to add it\s+import\/no-extraneous-dependencies/
-    //   );
-    //   expect(error.stdout.toString()).toMatch(
-    //     /error\s*Insert \`\;\`\s*prettier\/prettier/
-    //   );
-    // }
+    try {
+      execSync("dist/op-lint.js test/dirty-vue3.vue 2>&1");
+      fail("should throw");
+    } catch (error) {
+      // expect to fail
+      expect(error.stdout.toString()).toMatch(
+        /error\s+Unable to resolve path to module 'vue'\s+import\/no-unresolved/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /warning\s+Prop "someTitle" should define at least its type\s+vue\/require-prop-types/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /warning\s+Unexpected any.+typescript-eslint\/no-explicit-any/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /error\s+Duplicated key 'someTitle'\s+vue\/no-dupe-keys/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /error\s+You should not use an arrow function to define a watcher\s+vue\/no-arrow-functions-in-watch/
+      );
+      expect(error.stdout.toString()).toMatch(
+        /error\s+Replace `someTitle` with.+prettier\/prettier/
+      );
+    }
   });
   it("op-lint fixes Typescript and Javascript", () => {
     execSync("dist/op-lint.js fix test/fixme.?s 2>&1");
