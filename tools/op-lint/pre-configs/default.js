@@ -92,9 +92,6 @@ module.exports = {
         // put prettier LAST to override other configs
         "prettier",
       ],
-      parserOptions: {
-        ecmaVersion: 12,
-      },
       rules: {
         "prettier/prettier": "error",
         // own rules here

@@ -60,6 +60,31 @@ describe("op-lint", () => {
       expect(error.stdout.toString()).toMatch(/error\s+Trailing comma\s+json/);
     }
   });
+  it("op-lint lints Vue3", () => {
+    // should pass
+    expect(() => {
+      execSync("dist/op-lint.js test/good-vue3.vue.ts 2>&1");
+    }).not.toThrow();
+
+    // try {
+    //   execSync("dist/op-lint.js test/good-vue3.vue.ts 2>&1");
+    //   fail("should throw");
+    // } catch (error) {
+    //   // expect to fail
+    //   expect(error.stdout.toString()).toMatch(
+    //     /error\s*Unexpected var\, use let or const instead/
+    //   );
+    //   expect(error.stdout.toString()).toMatch(
+    //     /error\s*Unable to resolve path to module 'somethingNotExist'\s+import\/no-unresolved/
+    //   );
+    //   expect(error.stdout.toString()).toMatch(
+    //     /error\s+'yaml' should be listed in the project's dependencies\. Run 'npm i \-S yaml' to add it\s+import\/no-extraneous-dependencies/
+    //   );
+    //   expect(error.stdout.toString()).toMatch(
+    //     /error\s*Insert \`\;\`\s*prettier\/prettier/
+    //   );
+    // }
+  });
   it("op-lint fixes Typescript and Javascript", () => {
     execSync("dist/op-lint.js fix test/fixme.?s 2>&1");
     const js = readFileSync("test/fixme.js").toString();
