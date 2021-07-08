@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bingtimren/op-tools/compare/@bingsjs/ts-lerna-std-tools@0.2.0...@bingsjs/ts-lerna-std-tools@0.2.1) (2021-07-08)
+
+**Note:** Version bump only for package @bingsjs/ts-lerna-std-tools
+
+
+
+
+
 # 0.2.0 (2021-06-24)
 
 

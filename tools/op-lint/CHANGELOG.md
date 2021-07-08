@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.4.9...@bingsjs/op-lint@0.5.0) (2021-07-08)
+
+
+### Bug Fixes
+
+* **op-lint:** fix depcheck ([a293b02](https://github.com/bingtimren/op-tools/commit/a293b02e6fbc3080dbe34910b9d82eb80d8d2076))
+* **op-lint:** fix parsing of typescript and test ([a116618](https://github.com/bingtimren/op-tools/commit/a11661845dbc18704737f03cbd48ae4087b93a44))
+
+
+### Features
+
+* **op-lint:** add linting to .vue ([1abfce7](https://github.com/bingtimren/op-tools/commit/1abfce7608db1a64953b371e41a4bc8e03176956))
+
+
+
+
+
 ## [0.4.9](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.4.8...@bingsjs/op-lint@0.4.9) (2021-06-23)
 
 **Note:** Version bump only for package @bingsjs/op-lint
