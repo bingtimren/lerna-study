@@ -63,7 +63,7 @@ describe("op-lint", () => {
   it("op-lint lints Vue3", () => {
     // should pass
     expect(() => {
-      execSync("dist/op-lint.js test/good-vue3.vue.ts 2>&1");
+      execSync("dist/op-lint.js test/good-vue3.vue 2>&1");
     }).not.toThrow();
 
     // try {

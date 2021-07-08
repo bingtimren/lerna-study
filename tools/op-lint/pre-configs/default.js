@@ -74,7 +74,7 @@ module.exports = {
         "import/no-extraneous-dependencies": "error",
       },
     },
-    // for Vue single-file-template
+    // for Vue single-file-template in TS
     {
       files: ["*.vue"],
       plugins: ["import"],
@@ -92,6 +92,9 @@ module.exports = {
         // put prettier LAST to override other configs
         "prettier",
       ],
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+      },
       rules: {
         "prettier/prettier": "error",
         // own rules here

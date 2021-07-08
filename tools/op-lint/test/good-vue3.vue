@@ -5,7 +5,7 @@
 import { defineComponent } from "vue"; //eslint-disable-line import/no-unresolved
 
 export default defineComponent({
-  data: () => ({
+  data: (): { someTitle: string } => ({
     someTitle: "title",
   }),
 });
