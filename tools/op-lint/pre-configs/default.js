@@ -74,5 +74,31 @@ module.exports = {
         "import/no-extraneous-dependencies": "error",
       },
     },
+    // for Vue single-file-template
+    {
+      files: ["*.vue"],
+      plugins: ["import"],
+      extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        // vue3
+        // "plugin:vue/vue3-base",
+        // "plugin:vue/vue3-essential", base + error prevention
+        "plugin:vue/vue3-strongly-recommended", // essential + code readability / dev experience
+        // 'plugin:vue/vue3-recommended', // strongly-recommended + subjective community defaults
+        // put prettier LAST to override other configs
+        "prettier",
+      ],
+      parserOptions: {
+        ecmaVersion: 12,
+      },
+      rules: {
+        "prettier/prettier": "error",
+        // own rules here
+      },
+    },
   ],
 };
