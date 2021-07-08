@@ -16,7 +16,7 @@ To use with VS Code for debugging opened test file, create a launch config (.vsc
             "type": "pwa-node",
             "request": "launch",
             "name": "Active Jest Test",
-            "cwd": "${workspaceFolder}", // or ${fileDirname}, see https://code.visualstudio.com/docs/editor/variables-reference
+            "cwd": "${workspaceFolder}", // or ${fileDirname} or $fileDirname}${pathSeparator}.. with lerna repo, see https://code.visualstudio.com/docs/editor/variables-reference
             "runtimeArgs": [
               "--inspect-brk",
               "${workspaceFolder}/node_modules/.bin/op-jest",
