@@ -28,6 +28,10 @@ JSON:
 Typescript tests:
 - Just do "prettier"
 
+Vue Single-File-Component (.vue):
+- Use Typescript parser (expects typescript codes in script section)
+- Use "vue/vue3-strongly-recommended" pre-set
+
 ## Usage
 
 See `--help`
