@@ -52,12 +52,7 @@ export class OpinionedCommand {
     this.prog = new commander.Command();
     this.prog
       .option("-c, --pre-config <config>", "choose a pre-config", "default")
-      .option("-v, --verbose", "verbose mode, output more information")
-      .option(
-        "-x, --exe <executor>",
-        "choose an executor, 'npx' or 'yarn'",
-        "yarn"
-      );
+      .option("-v, --verbose", "verbose mode, output more information");
     this.prog
       .command("list")
       .description("list available pre-configs and exit")
