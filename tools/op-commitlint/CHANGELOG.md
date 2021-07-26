@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.15](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitlint@0.2.14...@bingsjs/op-commitlint@0.2.15) (2021-07-26)
+
+**Note:** Version bump only for package @bingsjs/op-commitlint
+
+
+
+
+
 ## [0.2.14](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-commitlint@0.2.13...@bingsjs/op-commitlint@0.2.14) (2021-07-26)
 
 **Note:** Version bump only for package @bingsjs/op-commitlint

@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-lint-staged",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "private": false,
   "description": "Pre-configured lint-staged to lint all staged files",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,12 +26,12 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-lint": "^0.5.1",
-    "@bingsjs/op-tools": "^0.4.4",
+    "@bingsjs/op-lint": "^0.5.2",
+    "@bingsjs/op-tools": "^0.4.5",
     "lint-staged": "^11.0.0",
     "markdown-toc": "^1.2.0",
     "prettier": "^2.3.0",
     "shift-n-run": "^0.3.6"
   },
-  "gitHead": "06be4c569d29d9d010e03c68a2777fd8ccbb7acd"
+  "gitHead": "624e53c9ff154849566839316c40e2cb55364584"
 }
