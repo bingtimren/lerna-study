@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-tscdoc",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "private": false,
   "description": "Opinioned tsc & typedoc with pre-configurations",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,7 +26,7 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.4.7",
+    "@bingsjs/op-tools": "^0.4.8",
     "chalk": "^4.1.1",
     "open-cli": "^6.0.1",
     "ts-purify": "^3.0.1",
@@ -37,5 +37,5 @@
     "jest": "^26.6.3",
     "ts-jest": "^26.5.6"
   },
-  "gitHead": "ce659245c1dd2fbbce20932974d81bffe510a648"
+  "gitHead": "7392acda7917d85f6cff618d1f330fd656a88a17"
 }

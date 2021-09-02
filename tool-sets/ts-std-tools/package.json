@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/ts-std-tools",
-  "version": "0.6.19",
+  "version": "0.6.20",
   "private": false,
   "description": "Standard tools for a typescript repo",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -22,13 +22,13 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-commitizen": "^0.3.14",
-    "@bingsjs/op-commitlint": "^0.2.17",
-    "@bingsjs/op-husky": "^0.5.9",
-    "@bingsjs/op-jest": "^0.2.10",
-    "@bingsjs/op-lint": "^0.5.4",
-    "@bingsjs/op-lint-staged": "^0.3.13",
-    "@bingsjs/op-tscdoc": "^0.2.13"
+    "@bingsjs/op-commitizen": "^0.3.15",
+    "@bingsjs/op-commitlint": "^0.2.18",
+    "@bingsjs/op-husky": "^0.5.10",
+    "@bingsjs/op-jest": "^0.2.11",
+    "@bingsjs/op-lint": "^0.5.5",
+    "@bingsjs/op-lint-staged": "^0.3.14",
+    "@bingsjs/op-tscdoc": "^0.2.14"
   },
-  "gitHead": "ce659245c1dd2fbbce20932974d81bffe510a648"
+  "gitHead": "7392acda7917d85f6cff618d1f330fd656a88a17"
 }
