@@ -19,13 +19,16 @@ If a project setup follows a certain assumptions (the "conventions") of these to
 
 Clean build and test
 
-`
+```
 git clean -fdx
 yarn all
-`
+```
 
 Publish
 
+```
+yarn public-publish
+```
 
 
 # Assumptions (Conventions)
