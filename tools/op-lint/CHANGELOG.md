@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.5.2...@bingsjs/op-lint@0.5.3) (2021-09-02)
+
+
+### Bug Fixes
+
+* fix error types after Typescript upgrade treats errors as unknown ([a2b1f64](https://github.com/bingtimren/op-tools/commit/a2b1f64859bafa9d6ef0e1c273f7e92e43e029a5))
+
+
+
+
+
 ## [0.5.2](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint@0.5.1...@bingsjs/op-lint@0.5.2) (2021-07-26)
 
 **Note:** Version bump only for package @bingsjs/op-lint

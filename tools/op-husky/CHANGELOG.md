@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.7...@bingsjs/op-husky@0.5.8) (2021-09-02)
+
+
+### Bug Fixes
+
+* fix error object type after Typescript upgrade (to treat error as unknown) ([cf63610](https://github.com/bingtimren/op-tools/commit/cf636107372ec1c519ee208c4d2fd621d16d4d4b))
+
+
+
+
+
 ## [0.5.7](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.6...@bingsjs/op-husky@0.5.7) (2021-07-26)
 
 **Note:** Version bump only for package @bingsjs/op-husky

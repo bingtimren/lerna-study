@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/bingtimren/op-tools/compare/shift-n-run@1.0.5...shift-n-run@1.0.6) (2021-09-02)
+
+
+### Bug Fixes
+
+* fix error types after Typescript upgrade treats errors as unknown ([a2b1f64](https://github.com/bingtimren/op-tools/commit/a2b1f64859bafa9d6ef0e1c273f7e92e43e029a5))
+
+
+
+
+
 ## [1.0.5](https://github.com/bingtimren/op-tools/compare/shift-n-run@1.0.4...shift-n-run@1.0.5) (2021-07-26)
 
 **Note:** Version bump only for package shift-n-run

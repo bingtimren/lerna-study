@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-husky",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "private": false,
   "description": "Pre-configured husky to install pre-configured git hooks",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,10 +26,10 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-commitizen": "^0.3.12",
-    "@bingsjs/op-commitlint": "^0.2.15",
-    "@bingsjs/op-lint-staged": "^0.3.11",
-    "@bingsjs/op-tools": "^0.4.5",
+    "@bingsjs/op-commitizen": "^0.3.13",
+    "@bingsjs/op-commitlint": "^0.2.16",
+    "@bingsjs/op-lint-staged": "^0.3.12",
+    "@bingsjs/op-tools": "^0.4.6",
     "chalk": "^4.1.1",
     "depcheck": "^1.4.1",
     "husky": "^6.0.0"
