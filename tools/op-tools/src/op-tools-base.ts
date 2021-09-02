@@ -236,7 +236,7 @@ export class OpinionedCommand {
           " " +
           (args?.join(" ") || "")
       );
-      const syncError: execa.ExecaSyncError = error;
+      const syncError = error as execa.ExecaSyncError;
       if (exitOnError) {
         process.exit(
           typeof syncError.exitCode === "number" && syncError.exitCode !== 0

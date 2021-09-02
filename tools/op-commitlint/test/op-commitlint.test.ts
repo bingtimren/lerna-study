@@ -9,7 +9,7 @@ describe("op-commitlint", () => {
     try {
       execSync(`${cli} ${join(__dirname, "bad-message")}`);
       fail("should not pass");
-    } catch (error) {
+    } catch (error: any) {
       expect(error.status).toEqual(1);
     }
   });
@@ -17,7 +17,7 @@ describe("op-commitlint", () => {
     try {
       execSync(`${cli} ${join(__dirname, "non-exist-message")}`);
       fail("should not pass");
-    } catch (error) {
+    } catch (error: any) {
       expect(error.status).toEqual(1);
     }
   });

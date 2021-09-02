@@ -5,7 +5,7 @@ describe("op-lint", () => {
     try {
       execSync("dist/op-lint.js test/dirty-code.ts 2>&1");
       fail("should throw");
-    } catch (error) {
+    } catch (error: any) {
       // expect to fail
       expect(error.stdout.toString()).toMatch(
         /error\s*Unexpected var\, use let or const instead/
@@ -25,7 +25,7 @@ describe("op-lint", () => {
     try {
       execSync("dist/op-lint.js test/dirty-code.js 2>&1");
       fail("should throw");
-    } catch (error) {
+    } catch (error: any) {
       // expect to fail
       expect(error.stdout.toString()).toMatch(
         /error\s*Unexpected var\, use let or const instead/
@@ -51,7 +51,7 @@ describe("op-lint", () => {
     try {
       execSync("dist/op-lint.js test/dirty-code.json 2>&1");
       fail("should throw");
-    } catch (error) {
+    } catch (error: any) {
       // expect to fail
       expect(error.stdout.toString()).toMatch(
         /error\s*Duplicate object key\s+json/
@@ -69,7 +69,7 @@ describe("op-lint", () => {
     try {
       execSync("dist/op-lint.js test/dirty-vue3.vue 2>&1");
       fail("should throw");
-    } catch (error) {
+    } catch (error: any) {
       // expect to fail
       expect(error.stdout.toString()).toMatch(
         /error\s+Unable to resolve path to module 'vue'\s+import\/no-unresolved/

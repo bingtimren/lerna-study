@@ -67,7 +67,7 @@ test("error: from command execution, covering function action", async () => {
       concurrency: "1",
       prefix: "#",
     });
-  } catch (error) {
+  } catch (error: any) {
     expect(error.message).toMatch(/ERROR: 2 executions failed/);
     expect(
       (error.message as string).includes(
@@ -92,7 +92,7 @@ test("test error: left over arguments, covering function action", async () => {
       prefix: "^",
     });
     fail("expect throw");
-  } catch (error) {
+  } catch (error: any) {
     expect(error.message as string).toMatch(/there is remainder/);
   }
 });
@@ -126,7 +126,7 @@ test("test error: placeholder error, covering function action", async () => {
       prefix: "^",
     });
     fail("expect throw");
-  } catch (error) {
+  } catch (error: any) {
     expect(error.message as string).toMatch(
       /place-holder.*must >0 and <= number of arguments/
     );

@@ -67,7 +67,7 @@ export async function action(
     try {
       return await proc;
     } catch (err) {
-      return err;
+      return err as execa.ExecaError;
     }
   }
 
