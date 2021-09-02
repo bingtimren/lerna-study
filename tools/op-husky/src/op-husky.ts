@@ -58,7 +58,9 @@ opCmd.program
       process.chdir(originalCwd);
       console.log(
         chalk.redBright(
-          `ERROR: cannot find .git dir under ${curDir}: ${error.message}`
+          `ERROR: cannot find .git dir under ${curDir}: ${
+            (error as Error).message
+          }`
         )
       );
       process.exit(1);
