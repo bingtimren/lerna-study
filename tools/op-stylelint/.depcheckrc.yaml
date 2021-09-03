@@ -1,0 +1,7 @@
+ignores:
+- "@bingsjs/op-lint"
+- stylelint
+- stylelint-config-idiomatic-order
+- stylelint-config-standard
+- stylelint-order
+- "@types/stylelint"
