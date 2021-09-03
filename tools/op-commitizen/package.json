@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-commitizen",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "private": false,
   "description": "Opinioned commitizen with default configuration for conventional changelog",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,9 +26,9 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.4.15",
+    "@bingsjs/op-tools": "^0.4.16",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0"
   },
-  "gitHead": "7392acda7917d85f6cff618d1f330fd656a88a17"
+  "gitHead": "91ac295d4d2be31ac23a1d9571db8747b8cd2246"
 }
