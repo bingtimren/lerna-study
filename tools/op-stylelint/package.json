@@ -1,0 +1,34 @@
+{
+  "name": "op-stylelint",
+  "version": "0.1.0",
+  "description": "Pre-configured style-lint",
+  "author": "Bing Ren <bingtimren@gmail.com>",
+  "homepage": "https://github.com/bingtimren/op-tools#readme",
+  "license": "ISC",
+  "bin": "build/op-stylelint.js",
+  "files": [
+    "dist",
+    "pre-configs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingtimren/op-tools.git"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig-build.json; chmod 755 dist/*.js",
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/bingtimren/op-tools/issues"
+  },
+  "dependencies": {
+    "@bingsjs/op-tools": "^0.4.8",
+    "stylelint": "^13.13.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/stylelint": "^13.13.2"
+  }
+}
