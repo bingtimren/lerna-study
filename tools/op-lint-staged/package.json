@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@bingsjs/op-lint": "^0.5.5",
+    "@bingsjs/op-stylelint": "^0.1.0",
     "@bingsjs/op-tools": "^0.4.8",
     "lint-staged": "^11.0.0",
     "markdown-toc": "^1.2.0",
