@@ -3,8 +3,7 @@
 */
 {
   "pre-commit": [
-    "yarn run build",
-    "yarn run test",
+    "yarn pre-commit",
     "yarn op-lint-staged", // further use op-lint-staged for processing staged files
     "yarn depcheck --ignores @bingsjs/*-std-tools,@bingsjs/op-*,@types/*" // check dependency, ignore opinioned tools and known common dependencies
   ],
