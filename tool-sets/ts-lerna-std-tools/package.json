@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/ts-lerna-std-tools",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": false,
   "description": "Standard Typescript lerna repo tools",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -22,13 +22,13 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-commitizen": "^0.3.16",
-    "@bingsjs/op-commitlint": "^0.2.19",
-    "@bingsjs/op-husky": "^0.5.11",
-    "@bingsjs/op-jest": "^0.2.12",
-    "@bingsjs/op-lint": "^0.5.6",
-    "@bingsjs/op-lint-staged": "^0.4.0",
-    "@bingsjs/op-tscdoc": "^0.2.15"
+    "@bingsjs/op-commitizen": "^0.3.17",
+    "@bingsjs/op-commitlint": "^0.2.20",
+    "@bingsjs/op-husky": "^0.5.12",
+    "@bingsjs/op-jest": "^0.2.13",
+    "@bingsjs/op-lint": "^0.5.7",
+    "@bingsjs/op-lint-staged": "^0.4.1",
+    "@bingsjs/op-tscdoc": "^0.2.16"
   },
   "gitHead": "7392acda7917d85f6cff618d1f330fd656a88a17"
 }
