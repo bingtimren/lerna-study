@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.19](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-depcruise@0.2.18...@bingsjs/op-depcruise@0.2.19) (2021-09-03)
+
+**Note:** Version bump only for package @bingsjs/op-depcruise
+
+
+
+
+
 ## [0.2.18](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-depcruise@0.2.17...@bingsjs/op-depcruise@0.2.18) (2021-09-03)
 
 **Note:** Version bump only for package @bingsjs/op-depcruise
