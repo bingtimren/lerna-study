@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-depcruise",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "private": false,
   "description": "Opinioned dep-cruise",
   "author": "Bing Ren <bingtimren@gmail.com>",
@@ -26,7 +26,7 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.4.8",
+    "@bingsjs/op-tools": "^0.4.9",
     "dependency-cruiser": "^10.0.1",
     "graphviz-cli": "^1.0.0",
     "open-cli": "^6.0.1"

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.3.14...@bingsjs/op-lint-staged@0.4.0) (2021-09-03)
+
+
+### Features
+
+* **op-lint-staged:** add css / scss / sass into linted files ([db61544](https://github.com/bingtimren/op-tools/commit/db61544282925c23db9a546e1826ac5da4616491))
+
+
+
+
+
 ## [0.3.14](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-lint-staged@0.3.13...@bingsjs/op-lint-staged@0.3.14) (2021-09-02)
 
 **Note:** Version bump only for package @bingsjs/op-lint-staged

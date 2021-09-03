@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-tools",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "private": false,
   "description": "Base class for opinioned tools",
   "author": "Bing Ren <bingtimren@gmail.com>",
