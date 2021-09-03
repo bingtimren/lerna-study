@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-stylelint@0.2.3...@bingsjs/op-stylelint@0.2.4) (2021-09-03)
+
+
+### Bug Fixes
+
+* fix package.json/bin field ([8566ae1](https://github.com/bingtimren/op-tools/commit/8566ae17e9079f6d3114a2ac2e0b535a82eb8215))
+
+
+
+
+
 ## [0.2.3](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-stylelint@0.2.2...@bingsjs/op-stylelint@0.2.3) (2021-09-03)
 
 **Note:** Version bump only for package @bingsjs/op-stylelint

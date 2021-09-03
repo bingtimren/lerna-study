@@ -1,6 +1,6 @@
 {
   "name": "shift-n-run",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": false,
   "description": "Run a command repeatedly, each time with a batch of a fixed number of arguments taken from a given Argument-Pool (like the bash 'shift' command), until the Argument-Pool is empty.",
   "author": "Bing Ren <bingtimren@gmail.com>",
