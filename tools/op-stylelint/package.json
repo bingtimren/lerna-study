@@ -1,5 +1,5 @@
 {
-  "name": "op-stylelint",
+  "name": "@bingsjs/op-stylelint",
   "version": "0.1.0",
   "description": "Pre-configured style-lint",
   "author": "Bing Ren <bingtimren@gmail.com>",
