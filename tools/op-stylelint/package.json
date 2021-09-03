@@ -1,6 +1,6 @@
 {
   "name": "@bingsjs/op-stylelint",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Pre-configured style-lint",
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
@@ -23,7 +23,7 @@
     "url": "https://github.com/bingtimren/op-tools/issues"
   },
   "dependencies": {
-    "@bingsjs/op-tools": "^0.4.16",
+    "@bingsjs/op-tools": "^0.4.17",
     "stylelint": "^13.13.1",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-standard": "^22.0.0",
