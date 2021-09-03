@@ -5,7 +5,7 @@
   "author": "Bing Ren <bingtimren@gmail.com>",
   "homepage": "https://github.com/bingtimren/op-tools#readme",
   "license": "ISC",
-  "bin": "build/op-stylelint.js",
+  "bin": "dist/op-stylelint.js",
   "files": [
     "dist",
     "pre-configs"
