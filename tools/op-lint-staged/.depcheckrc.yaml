@@ -3,3 +3,4 @@ ignores:
 - markdown-toc
 - prettier
 - shift-n-run
+- "@bingsjs/op-stylelint"
