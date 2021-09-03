@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/bingtimren/op-tools.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc --build tsconfig-build.json; chmod 755 dist/*.js",
     "test": "jest"
