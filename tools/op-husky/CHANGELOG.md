@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.13](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.12...@bingsjs/op-husky@0.5.13) (2021-09-03)
+
+**Note:** Version bump only for package @bingsjs/op-husky
+
+
+
+
+
 ## [0.5.12](https://github.com/bingtimren/op-tools/compare/@bingsjs/op-husky@0.5.11...@bingsjs/op-husky@0.5.12) (2021-09-03)
 
 **Note:** Version bump only for package @bingsjs/op-husky
